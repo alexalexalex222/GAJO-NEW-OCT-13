@@ -66,22 +66,22 @@
       isolation: isolate;
       z-index: 0;
       padding-block: clamp(56px, 8vw, 112px);
-      margin-bottom: -1px;
+      margin: 0;
+      background: var(--section-backdrop);
       content-visibility: visible;
       contain: initial;
       --section-backdrop: linear-gradient(180deg, #342d8d, #272171);
     }
 
     .section > *{
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 1200px;
+      content-visibility: visible;
     }
 
     .section::after{
       content:"";
       position:absolute;
-      top: clamp(-96px, -12vw, -56px);
-      bottom: clamp(-96px, -12vw, -56px);
+      top: 0;
+      bottom: 0;
       left: 50vw;
       width: 100vw;
       transform: translateX(-50%);
@@ -101,7 +101,10 @@
       background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
     }
 
-    html, body { overflow-x: clip; }
+    html, body {
+      margin: 0;
+      overflow-x: clip;
+    }
 
     .container{
       max-width: 1160px;
@@ -215,19 +218,7 @@
 
     body {
       padding-top: var(--header-h);
-      padding-left: max(16px, var(--safe-left));
-      padding-right: max(16px, var(--safe-right));
       padding-bottom: max(32px, var(--safe-bottom));
-      background:
-        radial-gradient(1200px 900px at 16% 10%, rgba(129,140,248,0.22), transparent 76%),
-        radial-gradient(1100px 820px at 82% 8%, rgba(79,70,229,0.18), transparent 72%),
-        radial-gradient(1600px 1200px at 50% 120%, rgba(99,102,241,0.12), transparent 82%),
-        var(--bg);
-      background-attachment: fixed;
-    }
-
-    body::before {
-      content: none;
     }
 
     p {
@@ -1669,22 +1660,22 @@
       isolation: isolate;
       z-index: 0;
       padding-block: clamp(56px, 8vw, 112px);
-      margin-bottom: -1px;
+      margin: 0;
+      background: var(--section-backdrop);
       content-visibility: visible;
       contain: initial;
       --section-backdrop: linear-gradient(180deg, #342d8d, #272171);
     }
 
     .section > * {
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 1200px;
+      content-visibility: visible;
     }
 
     .section::after {
       content: "";
       position: absolute;
-      top: clamp(-96px, -12vw, -56px);
-      bottom: clamp(-96px, -12vw, -56px);
+      top: 0;
+      bottom: 0;
       left: 50vw;
       width: 100vw;
       transform: translateX(-50%);
