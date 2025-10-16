@@ -66,22 +66,22 @@
       isolation: isolate;
       z-index: 0;
       padding-block: clamp(56px, 8vw, 112px);
-      margin-bottom: -1px;
+      margin: 0;
+      background: var(--section-backdrop);
       content-visibility: visible;
       contain: initial;
-      --section-backdrop: linear-gradient(180deg, #342d8d, #272171);
+      --section-backdrop: linear-gradient(180deg, #1f1453 0%, #05020f 100%);
     }
 
     .section > *{
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 1200px;
+      content-visibility: visible;
     }
 
     .section::after{
       content:"";
       position:absolute;
-      top: clamp(-96px, -12vw, -56px);
-      bottom: clamp(-96px, -12vw, -56px);
+      top: 0;
+      bottom: 0;
       left: 50vw;
       width: 100vw;
       transform: translateX(-50%);
@@ -101,7 +101,10 @@
       background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
     }
 
-    html, body { overflow-x: clip; }
+    html, body {
+      margin: 0;
+      overflow-x: clip;
+    }
 
     .container{
       max-width: 1160px;
@@ -113,15 +116,15 @@
     .stack > * + *{ margin-top: 2rem; }
     .section + .section { margin-top: 0; }
 
-    .section-problem { --section-backdrop: linear-gradient(180deg, #3a309c, #282178); }
-    .section-playbook { --section-backdrop: linear-gradient(180deg, #4f46e5, #312e81); }
-    .section-guarantee { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-pricing { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-comparison { --section-backdrop: linear-gradient(180deg, #4338ca, #1e1b4b); }
-    .section-team { --section-backdrop: linear-gradient(180deg, #3730a3, #1e1b4b); }
-    .section-resources { --section-backdrop: linear-gradient(180deg, #312e81, #1e1b4b); }
-    .section-faq { --section-backdrop: linear-gradient(180deg, #2d1b69, #1e1b4b); }
-    .section-lead { --section-backdrop: linear-gradient(180deg, #1e1b4b, #0f0f23); }
+    .section-problem { --section-backdrop: linear-gradient(180deg, #251360 0%, #070117 100%); }
+    .section-playbook { --section-backdrop: linear-gradient(180deg, #2f1874 0%, #0c031f 100%); }
+    .section-guarantee { --section-backdrop: linear-gradient(180deg, #361c82 0%, #110428 100%); }
+    .section-pricing { --section-backdrop: linear-gradient(180deg, #361c82 0%, #110428 100%); }
+    .section-comparison { --section-backdrop: linear-gradient(180deg, #2b176d 0%, #09031d 100%); }
+    .section-team { --section-backdrop: linear-gradient(180deg, #24135c 0%, #070216 100%); }
+    .section-resources { --section-backdrop: linear-gradient(180deg, #1d0f4f 0%, #050112 100%); }
+    .section-faq { --section-backdrop: linear-gradient(180deg, #180c45 0%, #03000c 100%); }
+    .section-lead { --section-backdrop: linear-gradient(180deg, #120836 0%, #010008 100%); }
 
     /* ================================================================
        GAJO Landing Page — Ultra Premium Single File Build
@@ -130,7 +133,10 @@
        ================================================================ */
 
     :root {
-      --bg: #000000;
+      --bg:
+        radial-gradient(120% 120% at 18% -10%, rgba(88, 45, 161, 0.36), transparent 62%),
+        radial-gradient(115% 125% at 80% 0%, rgba(67, 56, 202, 0.28), transparent 60%),
+        linear-gradient(180deg, #0b061d 0%, #020008 100%);
       --card: #1a1a1a;
       --surface: #111111;
       --border: #2a2a2a;
@@ -215,19 +221,7 @@
 
     body {
       padding-top: var(--header-h);
-      padding-left: max(16px, var(--safe-left));
-      padding-right: max(16px, var(--safe-right));
       padding-bottom: max(32px, var(--safe-bottom));
-      background:
-        radial-gradient(1200px 900px at 16% 10%, rgba(129,140,248,0.22), transparent 76%),
-        radial-gradient(1100px 820px at 82% 8%, rgba(79,70,229,0.18), transparent 72%),
-        radial-gradient(1600px 1200px at 50% 120%, rgba(99,102,241,0.12), transparent 82%),
-        var(--bg);
-      background-attachment: fixed;
-    }
-
-    body::before {
-      content: none;
     }
 
     p {
@@ -1669,22 +1663,22 @@
       isolation: isolate;
       z-index: 0;
       padding-block: clamp(56px, 8vw, 112px);
-      margin-bottom: -1px;
+      margin: 0;
+      background: var(--section-backdrop);
       content-visibility: visible;
       contain: initial;
-      --section-backdrop: linear-gradient(180deg, #342d8d, #272171);
+      --section-backdrop: linear-gradient(180deg, #1f1453 0%, #05020f 100%);
     }
 
     .section > * {
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 1200px;
+      content-visibility: visible;
     }
 
     .section::after {
       content: "";
       position: absolute;
-      top: clamp(-96px, -12vw, -56px);
-      bottom: clamp(-96px, -12vw, -56px);
+      top: 0;
+      bottom: 0;
       left: 50vw;
       width: 100vw;
       transform: translateX(-50%);
@@ -1706,15 +1700,15 @@
       background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
     }
 
-    .section-problem { --section-backdrop: linear-gradient(180deg, #3a309c, #282178); }
-    .section-playbook { --section-backdrop: linear-gradient(180deg, #4f46e5, #312e81); }
-    .section-guarantee { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-pricing { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-comparison { --section-backdrop: linear-gradient(180deg, #4338ca, #1e1b4b); }
-    .section-team { --section-backdrop: linear-gradient(180deg, #3730a3, #1e1b4b); }
-    .section-resources { --section-backdrop: linear-gradient(180deg, #312e81, #1e1b4b); }
-    .section-faq { --section-backdrop: linear-gradient(180deg, #2d1b69, #1e1b4b); }
-    .section-lead { --section-backdrop: linear-gradient(180deg, #1e1b4b, #0f0f23); }
+    .section-problem { --section-backdrop: linear-gradient(180deg, #251360 0%, #070117 100%); }
+    .section-playbook { --section-backdrop: linear-gradient(180deg, #2f1874 0%, #0c031f 100%); }
+    .section-guarantee { --section-backdrop: linear-gradient(180deg, #361c82 0%, #110428 100%); }
+    .section-pricing { --section-backdrop: linear-gradient(180deg, #361c82 0%, #110428 100%); }
+    .section-comparison { --section-backdrop: linear-gradient(180deg, #2b176d 0%, #09031d 100%); }
+    .section-team { --section-backdrop: linear-gradient(180deg, #24135c 0%, #070216 100%); }
+    .section-resources { --section-backdrop: linear-gradient(180deg, #1d0f4f 0%, #050112 100%); }
+    .section-faq { --section-backdrop: linear-gradient(180deg, #180c45 0%, #03000c 100%); }
+    .section-lead { --section-backdrop: linear-gradient(180deg, #120836 0%, #010008 100%); }
 
     .section-header {
       text-align: center;
