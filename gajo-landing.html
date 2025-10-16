@@ -66,22 +66,22 @@
       isolation: isolate;
       z-index: 0;
       padding-block: clamp(56px, 8vw, 112px);
-      margin-bottom: -1px;
+      margin: 0;
+      background: var(--section-backdrop);
       content-visibility: visible;
       contain: initial;
-      --section-backdrop: linear-gradient(180deg, #342d8d, #272171);
+      --section-backdrop: linear-gradient(180deg, #191033 0%, #05020f 100%);
     }
 
     .section > *{
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 1200px;
+      content-visibility: visible;
     }
 
     .section::after{
       content:"";
       position:absolute;
-      top: clamp(-96px, -12vw, -56px);
-      bottom: clamp(-96px, -12vw, -56px);
+      top: 0;
+      bottom: 0;
       left: 50vw;
       width: 100vw;
       transform: translateX(-50%);
@@ -98,10 +98,13 @@
       transform: translateX(-50%);
       pointer-events:none;
       z-index:-1;
-      background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
+      background: linear-gradient(180deg, rgba(32,20,70,.36), rgba(6,4,20,0));
     }
 
-    html, body { overflow-x: clip; }
+    html, body {
+      margin: 0;
+      overflow-x: clip;
+    }
 
     .container{
       max-width: 1160px;
@@ -113,15 +116,15 @@
     .stack > * + *{ margin-top: 2rem; }
     .section + .section { margin-top: 0; }
 
-    .section-problem { --section-backdrop: linear-gradient(180deg, #3a309c, #282178); }
-    .section-playbook { --section-backdrop: linear-gradient(180deg, #4f46e5, #312e81); }
-    .section-guarantee { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-pricing { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-comparison { --section-backdrop: linear-gradient(180deg, #4338ca, #1e1b4b); }
-    .section-team { --section-backdrop: linear-gradient(180deg, #3730a3, #1e1b4b); }
-    .section-resources { --section-backdrop: linear-gradient(180deg, #312e81, #1e1b4b); }
-    .section-faq { --section-backdrop: linear-gradient(180deg, #2d1b69, #1e1b4b); }
-    .section-lead { --section-backdrop: linear-gradient(180deg, #1e1b4b, #0f0f23); }
+    .section-problem { --section-backdrop: linear-gradient(180deg, #211040, #070214); }
+    .section-playbook { --section-backdrop: linear-gradient(180deg, #25124a, #080218); }
+    .section-guarantee { --section-backdrop: linear-gradient(180deg, #2b1356, #09021c); }
+    .section-pricing { --section-backdrop: linear-gradient(180deg, #24124c, #080218); }
+    .section-comparison { --section-backdrop: linear-gradient(180deg, #1c0f3d, #060214); }
+    .section-team { --section-backdrop: linear-gradient(180deg, #1a0e38, #050212); }
+    .section-resources { --section-backdrop: linear-gradient(180deg, #180c34, #040210); }
+    .section-faq { --section-backdrop: linear-gradient(180deg, #150a2e, #04020e); }
+    .section-lead { --section-backdrop: linear-gradient(180deg, #100822, #020008); }
 
     /* ================================================================
        GAJO Landing Page — Ultra Premium Single File Build
@@ -215,8 +218,6 @@
 
     body {
       padding-top: var(--header-h);
-      padding-left: max(16px, var(--safe-left));
-      padding-right: max(16px, var(--safe-right));
       padding-bottom: max(32px, var(--safe-bottom));
       background:
         radial-gradient(1200px 900px at 16% 10%, rgba(129,140,248,0.22), transparent 76%),
@@ -225,6 +226,7 @@
         var(--bg);
       background-attachment: fixed;
     }
+
 
     body::before {
       content: none;
@@ -1669,22 +1671,22 @@
       isolation: isolate;
       z-index: 0;
       padding-block: clamp(56px, 8vw, 112px);
-      margin-bottom: -1px;
+      margin: 0;
+      background: var(--section-backdrop);
       content-visibility: visible;
       contain: initial;
-      --section-backdrop: linear-gradient(180deg, #342d8d, #272171);
+      --section-backdrop: linear-gradient(180deg, #191033 0%, #05020f 100%);
     }
 
     .section > * {
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 1200px;
+      content-visibility: visible;
     }
 
     .section::after {
       content: "";
       position: absolute;
-      top: clamp(-96px, -12vw, -56px);
-      bottom: clamp(-96px, -12vw, -56px);
+      top: 0;
+      bottom: 0;
       left: 50vw;
       width: 100vw;
       transform: translateX(-50%);
@@ -1703,18 +1705,18 @@
       transform: translateX(-50%);
       pointer-events: none;
       z-index: -1;
-      background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
+      background: linear-gradient(180deg, rgba(32,20,70,.36), rgba(6,4,20,0));
     }
 
-    .section-problem { --section-backdrop: linear-gradient(180deg, #3a309c, #282178); }
-    .section-playbook { --section-backdrop: linear-gradient(180deg, #4f46e5, #312e81); }
-    .section-guarantee { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-pricing { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-comparison { --section-backdrop: linear-gradient(180deg, #4338ca, #1e1b4b); }
-    .section-team { --section-backdrop: linear-gradient(180deg, #3730a3, #1e1b4b); }
-    .section-resources { --section-backdrop: linear-gradient(180deg, #312e81, #1e1b4b); }
-    .section-faq { --section-backdrop: linear-gradient(180deg, #2d1b69, #1e1b4b); }
-    .section-lead { --section-backdrop: linear-gradient(180deg, #1e1b4b, #0f0f23); }
+    .section-problem { --section-backdrop: linear-gradient(180deg, #211040, #070214); }
+    .section-playbook { --section-backdrop: linear-gradient(180deg, #25124a, #080218); }
+    .section-guarantee { --section-backdrop: linear-gradient(180deg, #2b1356, #09021c); }
+    .section-pricing { --section-backdrop: linear-gradient(180deg, #24124c, #080218); }
+    .section-comparison { --section-backdrop: linear-gradient(180deg, #1c0f3d, #060214); }
+    .section-team { --section-backdrop: linear-gradient(180deg, #1a0e38, #050212); }
+    .section-resources { --section-backdrop: linear-gradient(180deg, #180c34, #040210); }
+    .section-faq { --section-backdrop: linear-gradient(180deg, #150a2e, #04020e); }
+    .section-lead { --section-backdrop: linear-gradient(180deg, #100822, #020008); }
 
     .section-header {
       text-align: center;
