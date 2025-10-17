@@ -117,7 +117,19 @@
     .stack > * + *{ margin-top: 2rem; }
     .section + .section { margin-top: 0; }
 
-    .section-problem { --section-backdrop: linear-gradient(180deg, #1c0c49 0%, #070018 52%, #020007 100%); }
+    .section-problem {
+      --section-backdrop:
+        radial-gradient(150% 180% at 18% -10%, rgba(129,140,248,0.26), transparent 72%),
+        radial-gradient(130% 170% at 80% -6%, rgba(99,102,241,0.22), transparent 74%),
+        linear-gradient(180deg, #1c0c49 0%, #070018 52%, #020007 100%);
+    }
+
+    .section-problem::before {
+      background:
+        radial-gradient(120% 140% at 22% 0%, rgba(120,86,222,0.22), transparent 68%),
+        radial-gradient(110% 160% at 78% 4%, rgba(94,72,210,0.18), transparent 70%),
+        linear-gradient(180deg, rgba(14,16,32,0.4), rgba(4,6,16,0));
+    }
     .section-playbook { --section-backdrop: linear-gradient(180deg, #220e58 0%, #08001c 54%, #020007 100%); }
     .section-guarantee { --section-backdrop: linear-gradient(180deg, #261165 0%, #090020 56%, #020007 100%); }
     .section-pricing { --section-backdrop: linear-gradient(180deg, #2a146e 0%, #0a0122 58%, #020007 100%); }
@@ -1702,7 +1714,19 @@
       background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
     }
 
-    .section-problem { --section-backdrop: linear-gradient(180deg, #1c0c49 0%, #070018 52%, #020007 100%); }
+    .section-problem {
+      --section-backdrop:
+        radial-gradient(150% 180% at 18% -10%, rgba(129,140,248,0.26), transparent 72%),
+        radial-gradient(130% 170% at 80% -6%, rgba(99,102,241,0.22), transparent 74%),
+        linear-gradient(180deg, #1c0c49 0%, #070018 52%, #020007 100%);
+    }
+
+    .section-problem::before {
+      background:
+        radial-gradient(120% 140% at 22% 0%, rgba(120,86,222,0.22), transparent 68%),
+        radial-gradient(110% 160% at 78% 4%, rgba(94,72,210,0.18), transparent 70%),
+        linear-gradient(180deg, rgba(14,16,32,0.4), rgba(4,6,16,0));
+    }
     .section-playbook { --section-backdrop: linear-gradient(180deg, #220e58 0%, #08001c 54%, #020007 100%); }
     .section-guarantee { --section-backdrop: linear-gradient(180deg, #261165 0%, #090020 56%, #020007 100%); }
     .section-pricing { --section-backdrop: linear-gradient(180deg, #2a146e 0%, #0a0122 58%, #020007 100%); }
