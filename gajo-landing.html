@@ -71,6 +71,7 @@
       content-visibility: visible;
       contain: initial;
       --section-backdrop: linear-gradient(180deg, #020007 0%, #060018 48%, #160b3f 100%);
+      --section-overlay: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
     }
 
     .section > *{
@@ -99,7 +100,7 @@
       transform: translateX(-50%);
       pointer-events:none;
       z-index:-1;
-      background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
+      background: var(--section-overlay);
     }
 
     html, body {
@@ -121,24 +122,102 @@
       --section-backdrop:
         radial-gradient(180% 200% at 18% 130%, rgba(129,140,248,0.24), transparent 78%),
         radial-gradient(160% 190% at 84% 132%, rgba(99,102,241,0.18), transparent 80%),
-        linear-gradient(180deg, #1c0c49 0%, #090024 46%, #010006 100%);
-    }
-
-    .section-problem::before {
-      background:
+        linear-gradient(180deg, #1c0c49 0%, #090024 54%, #010006 100%);
+      --section-overlay:
         radial-gradient(150% 160% at 24% 118%, rgba(120,86,222,0.18), transparent 72%),
         radial-gradient(130% 180% at 80% 126%, rgba(94,72,210,0.14), transparent 76%),
         linear-gradient(180deg, rgba(18,12,48,0.4), rgba(4,6,16,0));
     }
-    .section-playbook { --section-backdrop: linear-gradient(180deg, #020007 0%, #08001c 48%, #220e58 100%); }
-    .section-organic { --section-backdrop: linear-gradient(180deg, #23105b 0%, #08001e 54%, #010006 100%); }
-    .section-guarantee { --section-backdrop: linear-gradient(180deg, #010006 0%, #08001e 52%, #23105b 100%); }
-    .section-pricing { --section-backdrop: linear-gradient(180deg, #020007 0%, #0a0122 54%, #2a146e 100%); }
-    .section-comparison { --section-backdrop: linear-gradient(180deg, #201058 0%, #070019 52%, #010006 100%); }
-    .section-team { --section-backdrop: linear-gradient(180deg, #1a0c4b 0%, #060017 52%, #010005 100%); }
-    .section-resources { --section-backdrop: linear-gradient(180deg, #170a43 0%, #050015 52%, #010005 100%); }
-    .section-faq { --section-backdrop: linear-gradient(180deg, #13083a 0%, #040012 50%, #000004 100%); }
-    .section-lead { --section-backdrop: linear-gradient(180deg, #000003 0%, #03000f 48%, #0d052c 100%); }
+    .section-playbook {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(36,14,92,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(28,12,74,0.22), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #070019 60%, #220e58 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 20% -14%, rgba(120,86,222,0.2), transparent 74%),
+        radial-gradient(150% 220% at 82% -10%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(8,4,24,0.38), rgba(4,6,16,0));
+    }
+    .section-organic {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.24), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.18), transparent 78%),
+        linear-gradient(180deg, #23105b 0%, #0b0224 62%, #010006 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(28,12,78,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(22,10,62,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(14,8,32,0.38), rgba(4,6,16,0));
+    }
+    .section-guarantee {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(38,14,98,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(30,12,80,0.22), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #08001e 60%, #23105b 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 18% -16%, rgba(120,86,222,0.2), transparent 74%),
+        radial-gradient(150% 220% at 82% -12%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(8,4,24,0.38), rgba(4,6,16,0));
+    }
+    .section-pricing {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(40,14,104,0.28), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(32,12,84,0.24), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #0a0122 60%, #2a146e 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 18% -16%, rgba(120,86,222,0.2), transparent 74%),
+        radial-gradient(150% 220% at 82% -12%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(10,6,28,0.4), rgba(4,6,16,0));
+    }
+    .section-comparison {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.22), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.17), transparent 78%),
+        linear-gradient(180deg, #201058 0%, #08011f 62%, #010006 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(26,10,68,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(20,8,52,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(12,8,30,0.36), rgba(4,6,16,0));
+    }
+    .section-team {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.21), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.17), transparent 78%),
+        linear-gradient(180deg, #1a0c4b 0%, #060017 62%, #010005 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(24,10,62,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(18,8,50,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(10,6,28,0.36), rgba(4,6,16,0));
+    }
+    .section-resources {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.2), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.16), transparent 78%),
+        linear-gradient(180deg, #170a43 0%, #050015 62%, #010005 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(22,10,58,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(16,8,46,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(10,6,26,0.34), rgba(4,6,16,0));
+    }
+    .section-faq {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.2), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.16), transparent 78%),
+        linear-gradient(180deg, #13083a 0%, #060016 62%, #000004 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(22,8,56,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(16,6,44,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(8,6,24,0.36), rgba(4,6,16,0));
+    }
+    .section-lead {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(32,12,90,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(26,10,72,0.22), transparent 86%),
+        linear-gradient(180deg, #000003 0%, #03000f 60%, #0d052c 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 18% -16%, rgba(120,86,222,0.2), transparent 74%),
+        radial-gradient(150% 220% at 82% -12%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(8,4,24,0.38), rgba(4,6,16,0));
+    }
 
     /* ================================================================
        GAJO Landing Page — Ultra Premium Single File Build
@@ -1682,6 +1761,7 @@
       content-visibility: visible;
       contain: initial;
       --section-backdrop: linear-gradient(180deg, #020007 0%, #060018 48%, #160b3f 100%);
+      --section-overlay: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
     }
 
     .section > * {
@@ -1712,31 +1792,109 @@
       transform: translateX(-50%);
       pointer-events: none;
       z-index: -1;
-      background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
+      background: var(--section-overlay);
     }
 
     .section-problem {
       --section-backdrop:
         radial-gradient(180% 200% at 18% 130%, rgba(129,140,248,0.24), transparent 78%),
         radial-gradient(160% 190% at 84% 132%, rgba(99,102,241,0.18), transparent 80%),
-        linear-gradient(180deg, #1c0c49 0%, #090024 46%, #010006 100%);
-    }
-
-    .section-problem::before {
-      background:
+        linear-gradient(180deg, #1c0c49 0%, #090024 54%, #010006 100%);
+      --section-overlay:
         radial-gradient(150% 160% at 24% 118%, rgba(120,86,222,0.18), transparent 72%),
         radial-gradient(130% 180% at 80% 126%, rgba(94,72,210,0.14), transparent 76%),
         linear-gradient(180deg, rgba(18,12,48,0.4), rgba(4,6,16,0));
     }
-    .section-playbook { --section-backdrop: linear-gradient(180deg, #020007 0%, #08001c 48%, #220e58 100%); }
-    .section-organic { --section-backdrop: linear-gradient(180deg, #23105b 0%, #08001e 54%, #010006 100%); }
-    .section-guarantee { --section-backdrop: linear-gradient(180deg, #010006 0%, #08001e 52%, #23105b 100%); }
-    .section-pricing { --section-backdrop: linear-gradient(180deg, #020007 0%, #0a0122 54%, #2a146e 100%); }
-    .section-comparison { --section-backdrop: linear-gradient(180deg, #201058 0%, #070019 52%, #010006 100%); }
-    .section-team { --section-backdrop: linear-gradient(180deg, #1a0c4b 0%, #060017 52%, #010005 100%); }
-    .section-resources { --section-backdrop: linear-gradient(180deg, #170a43 0%, #050015 52%, #010005 100%); }
-    .section-faq { --section-backdrop: linear-gradient(180deg, #13083a 0%, #040012 50%, #000004 100%); }
-    .section-lead { --section-backdrop: linear-gradient(180deg, #000003 0%, #03000f 48%, #0d052c 100%); }
+    .section-playbook {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(36,14,92,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(28,12,74,0.22), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #070019 60%, #220e58 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 20% -14%, rgba(120,86,222,0.2), transparent 74%),
+        radial-gradient(150% 220% at 82% -10%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(8,4,24,0.38), rgba(4,6,16,0));
+    }
+    .section-organic {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.24), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.18), transparent 78%),
+        linear-gradient(180deg, #23105b 0%, #0b0224 62%, #010006 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(28,12,78,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(22,10,62,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(14,8,32,0.38), rgba(4,6,16,0));
+    }
+    .section-guarantee {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(38,14,98,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(30,12,80,0.22), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #08001e 60%, #23105b 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 18% -16%, rgba(120,86,222,0.2), transparent 74%),
+        radial-gradient(150% 220% at 82% -12%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(8,4,24,0.38), rgba(4,6,16,0));
+    }
+    .section-pricing {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(40,14,104,0.28), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(32,12,84,0.24), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #0a0122 60%, #2a146e 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 18% -16%, rgba(120,86,222,0.2), transparent 74%),
+        radial-gradient(150% 220% at 82% -12%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(10,6,28,0.4), rgba(4,6,16,0));
+    }
+    .section-comparison {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.22), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.17), transparent 78%),
+        linear-gradient(180deg, #201058 0%, #08011f 62%, #010006 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(26,10,68,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(20,8,52,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(12,8,30,0.36), rgba(4,6,16,0));
+    }
+    .section-team {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.21), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.17), transparent 78%),
+        linear-gradient(180deg, #1a0c4b 0%, #060017 62%, #010005 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(24,10,62,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(18,8,50,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(10,6,28,0.36), rgba(4,6,16,0));
+    }
+    .section-resources {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.2), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.16), transparent 78%),
+        linear-gradient(180deg, #170a43 0%, #050015 62%, #010005 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(22,10,58,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(16,8,46,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(10,6,26,0.34), rgba(4,6,16,0));
+    }
+    .section-faq {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.2), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.16), transparent 78%),
+        linear-gradient(180deg, #13083a 0%, #060016 62%, #000004 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(22,8,56,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(16,6,44,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(8,6,24,0.36), rgba(4,6,16,0));
+    }
+    .section-lead {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(32,12,90,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(26,10,72,0.22), transparent 86%),
+        linear-gradient(180deg, #000003 0%, #03000f 60%, #0d052c 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 18% -16%, rgba(120,86,222,0.2), transparent 74%),
+        radial-gradient(150% 220% at 82% -12%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(8,4,24,0.38), rgba(4,6,16,0));
+    }
 
     .section-header {
       text-align: center;
