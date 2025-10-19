@@ -66,28 +66,30 @@
       isolation: isolate;
       z-index: 0;
       padding-block: clamp(56px, 8vw, 112px);
-      margin-bottom: -1px;
+      margin: 0;
+      background: none;
       content-visibility: visible;
       contain: initial;
-      --section-backdrop: linear-gradient(180deg, #342d8d, #272171);
+      --section-backdrop: linear-gradient(180deg, #020007 0%, #060018 48%, #160b3f 100%);
+      --section-overlay: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
     }
 
     .section > *{
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 1200px;
+      content-visibility: visible;
     }
 
     .section::after{
       content:"";
       position:absolute;
-      top: clamp(-96px, -12vw, -56px);
-      bottom: clamp(-96px, -12vw, -56px);
+      top: 0;
+      bottom: 0;
       left: 50vw;
       width: 100vw;
       transform: translateX(-50%);
       pointer-events:none;
       z-index:-2;
       background: var(--section-backdrop);
+      opacity: 1;
     }
 
     .section::before{
@@ -98,10 +100,13 @@
       transform: translateX(-50%);
       pointer-events:none;
       z-index:-1;
-      background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
+      background: var(--section-overlay);
     }
 
-    html, body { overflow-x: clip; }
+    html, body {
+      margin: 0;
+      overflow-x: clip;
+    }
 
     .container{
       max-width: 1160px;
@@ -113,15 +118,106 @@
     .stack > * + *{ margin-top: 2rem; }
     .section + .section { margin-top: 0; }
 
-    .section-problem { --section-backdrop: linear-gradient(180deg, #3a309c, #282178); }
-    .section-playbook { --section-backdrop: linear-gradient(180deg, #4f46e5, #312e81); }
-    .section-guarantee { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-pricing { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-comparison { --section-backdrop: linear-gradient(180deg, #4338ca, #1e1b4b); }
-    .section-team { --section-backdrop: linear-gradient(180deg, #3730a3, #1e1b4b); }
-    .section-resources { --section-backdrop: linear-gradient(180deg, #312e81, #1e1b4b); }
-    .section-faq { --section-backdrop: linear-gradient(180deg, #2d1b69, #1e1b4b); }
-    .section-lead { --section-backdrop: linear-gradient(180deg, #1e1b4b, #0f0f23); }
+    .section-problem {
+      --section-backdrop:
+        radial-gradient(180% 200% at 18% 130%, rgba(129,140,248,0.24), transparent 78%),
+        radial-gradient(160% 190% at 84% 132%, rgba(99,102,241,0.18), transparent 80%),
+        linear-gradient(180deg, #1c0c49 0%, #090024 54%, #010006 100%);
+      --section-overlay:
+        radial-gradient(150% 160% at 24% 118%, rgba(120,86,222,0.18), transparent 72%),
+        radial-gradient(130% 180% at 80% 126%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(18,12,48,0.4), rgba(4,6,16,0));
+    }
+    .section-playbook {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(36,14,92,0.24), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(28,12,74,0.2), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #070019 52%, #23105b 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 22% 126%, rgba(120,86,222,0.16), transparent 78%),
+        radial-gradient(150% 220% at 78% 132%, rgba(94,72,210,0.1), transparent 80%),
+        linear-gradient(180deg, rgba(4,6,16,0), rgba(10,6,28,0.34));
+    }
+    .section-organic {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.24), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.18), transparent 78%),
+        linear-gradient(180deg, #23105b 0%, #0b0224 62%, #010006 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(28,12,78,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(22,10,62,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(14,8,32,0.38), rgba(4,6,16,0));
+    }
+    .section-guarantee {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(38,14,98,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(30,12,80,0.22), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #08001e 60%, #23105b 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 20% 126%, rgba(120,86,222,0.18), transparent 78%),
+        radial-gradient(150% 220% at 80% 132%, rgba(94,72,210,0.12), transparent 80%),
+        linear-gradient(180deg, rgba(4,6,16,0), rgba(8,4,24,0.36));
+    }
+    .section-pricing {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(40,14,104,0.28), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(32,12,84,0.24), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #0a0122 60%, #2a146e 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 20% 126%, rgba(120,86,222,0.18), transparent 78%),
+        radial-gradient(150% 220% at 80% 132%, rgba(94,72,210,0.12), transparent 80%),
+        linear-gradient(180deg, rgba(4,6,16,0), rgba(10,6,28,0.38));
+    }
+    .section-comparison {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.22), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.17), transparent 78%),
+        linear-gradient(180deg, #201058 0%, #08011f 62%, #010006 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(26,10,68,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(20,8,52,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(12,8,30,0.36), rgba(4,6,16,0));
+    }
+    .section-team {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.21), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.17), transparent 78%),
+        linear-gradient(180deg, #1a0c4b 0%, #060017 62%, #010005 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(24,10,62,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(18,8,50,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(10,6,28,0.36), rgba(4,6,16,0));
+    }
+    .section-resources {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.2), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.16), transparent 78%),
+        linear-gradient(180deg, #170a43 0%, #050015 62%, #010005 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(22,10,58,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(16,8,46,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(10,6,26,0.34), rgba(4,6,16,0));
+    }
+    .section-faq {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.2), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.16), transparent 78%),
+        linear-gradient(180deg, #13083a 0%, #060016 62%, #000004 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(22,8,56,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(16,6,44,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(8,6,24,0.36), rgba(4,6,16,0));
+    }
+    .section-lead {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(32,12,90,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(26,10,72,0.22), transparent 86%),
+        linear-gradient(180deg, #000003 0%, #03000f 60%, #0d052c 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 20% 126%, rgba(120,86,222,0.18), transparent 78%),
+        radial-gradient(150% 220% at 80% 132%, rgba(94,72,210,0.12), transparent 80%),
+        linear-gradient(180deg, rgba(4,6,16,0), rgba(8,4,24,0.36));
+    }
 
     /* ================================================================
        GAJO Landing Page — Ultra Premium Single File Build
@@ -130,7 +226,10 @@
        ================================================================ */
 
     :root {
-      --bg: #000000;
+      --bg:
+        radial-gradient(150% 180% at 18% -6%, rgba(120, 86, 222, 0.22), transparent 68%),
+        radial-gradient(140% 190% at 82% -2%, rgba(94, 72, 210, 0.18), transparent 70%),
+        linear-gradient(180deg, #000004 0%, #030010 52%, #0c0424 100%);
       --card: #1a1a1a;
       --surface: #111111;
       --border: #2a2a2a;
@@ -214,20 +313,8 @@
     }
 
     body {
-      padding-top: var(--header-h);
-      padding-left: max(16px, var(--safe-left));
-      padding-right: max(16px, var(--safe-right));
+      padding-top: 0;
       padding-bottom: max(32px, var(--safe-bottom));
-      background:
-        radial-gradient(1200px 900px at 16% 10%, rgba(129,140,248,0.22), transparent 76%),
-        radial-gradient(1100px 820px at 82% 8%, rgba(79,70,229,0.18), transparent 72%),
-        radial-gradient(1600px 1200px at 50% 120%, rgba(99,102,241,0.12), transparent 82%),
-        var(--bg);
-      background-attachment: fixed;
-    }
-
-    body::before {
-      content: none;
     }
 
     p {
@@ -584,7 +671,7 @@
 
     .hero::before {
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.92) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(8,2,24,0.55) 56%, rgba(30,12,73,0.88) 100%),
         radial-gradient(140% 160% at 18% 8%, rgba(129,140,248,0.22), transparent 70%),
         radial-gradient(130% 150% at 76% 16%, rgba(79,70,229,0.18), transparent 68%);
       z-index: 0;
@@ -1669,28 +1756,30 @@
       isolation: isolate;
       z-index: 0;
       padding-block: clamp(56px, 8vw, 112px);
-      margin-bottom: -1px;
+      margin: 0;
+      background: none;
       content-visibility: visible;
       contain: initial;
-      --section-backdrop: linear-gradient(180deg, #342d8d, #272171);
+      --section-backdrop: linear-gradient(180deg, #020007 0%, #060018 48%, #160b3f 100%);
+      --section-overlay: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
     }
 
     .section > * {
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 1200px;
+      content-visibility: visible;
     }
 
     .section::after {
       content: "";
       position: absolute;
-      top: clamp(-96px, -12vw, -56px);
-      bottom: clamp(-96px, -12vw, -56px);
+      top: 0;
+      bottom: 0;
       left: 50vw;
       width: 100vw;
       transform: translateX(-50%);
       pointer-events: none;
       z-index: -2;
       background: var(--section-backdrop);
+      opacity: 1;
     }
 
     .section::before {
@@ -1703,18 +1792,109 @@
       transform: translateX(-50%);
       pointer-events: none;
       z-index: -1;
-      background: linear-gradient(180deg, rgba(14,16,32,.28), rgba(4,6,16,0));
+      background: var(--section-overlay);
     }
 
-    .section-problem { --section-backdrop: linear-gradient(180deg, #3a309c, #282178); }
-    .section-playbook { --section-backdrop: linear-gradient(180deg, #4f46e5, #312e81); }
-    .section-guarantee { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-pricing { --section-backdrop: linear-gradient(180deg, #5534c8, #311e93); }
-    .section-comparison { --section-backdrop: linear-gradient(180deg, #4338ca, #1e1b4b); }
-    .section-team { --section-backdrop: linear-gradient(180deg, #3730a3, #1e1b4b); }
-    .section-resources { --section-backdrop: linear-gradient(180deg, #312e81, #1e1b4b); }
-    .section-faq { --section-backdrop: linear-gradient(180deg, #2d1b69, #1e1b4b); }
-    .section-lead { --section-backdrop: linear-gradient(180deg, #1e1b4b, #0f0f23); }
+    .section-problem {
+      --section-backdrop:
+        radial-gradient(180% 200% at 18% 130%, rgba(129,140,248,0.24), transparent 78%),
+        radial-gradient(160% 190% at 84% 132%, rgba(99,102,241,0.18), transparent 80%),
+        linear-gradient(180deg, #1c0c49 0%, #090024 54%, #010006 100%);
+      --section-overlay:
+        radial-gradient(150% 160% at 24% 118%, rgba(120,86,222,0.18), transparent 72%),
+        radial-gradient(130% 180% at 80% 126%, rgba(94,72,210,0.14), transparent 76%),
+        linear-gradient(180deg, rgba(18,12,48,0.4), rgba(4,6,16,0));
+    }
+    .section-playbook {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(36,14,92,0.24), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(28,12,74,0.2), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #070019 52%, #23105b 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 22% 126%, rgba(120,86,222,0.16), transparent 78%),
+        radial-gradient(150% 220% at 78% 132%, rgba(94,72,210,0.1), transparent 80%),
+        linear-gradient(180deg, rgba(4,6,16,0), rgba(10,6,28,0.34));
+    }
+    .section-organic {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.24), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.18), transparent 78%),
+        linear-gradient(180deg, #23105b 0%, #0b0224 62%, #010006 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(28,12,78,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(22,10,62,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(14,8,32,0.38), rgba(4,6,16,0));
+    }
+    .section-guarantee {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(38,14,98,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(30,12,80,0.22), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #08001e 60%, #23105b 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 20% 126%, rgba(120,86,222,0.18), transparent 78%),
+        radial-gradient(150% 220% at 80% 132%, rgba(94,72,210,0.12), transparent 80%),
+        linear-gradient(180deg, rgba(4,6,16,0), rgba(8,4,24,0.36));
+    }
+    .section-pricing {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(40,14,104,0.28), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(32,12,84,0.24), transparent 86%),
+        linear-gradient(180deg, #010006 0%, #0a0122 60%, #2a146e 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 20% 126%, rgba(120,86,222,0.18), transparent 78%),
+        radial-gradient(150% 220% at 80% 132%, rgba(94,72,210,0.12), transparent 80%),
+        linear-gradient(180deg, rgba(4,6,16,0), rgba(10,6,28,0.38));
+    }
+    .section-comparison {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.22), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.17), transparent 78%),
+        linear-gradient(180deg, #201058 0%, #08011f 62%, #010006 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(26,10,68,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(20,8,52,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(12,8,30,0.36), rgba(4,6,16,0));
+    }
+    .section-team {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.21), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.17), transparent 78%),
+        linear-gradient(180deg, #1a0c4b 0%, #060017 62%, #010005 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(24,10,62,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(18,8,50,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(10,6,28,0.36), rgba(4,6,16,0));
+    }
+    .section-resources {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.2), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.16), transparent 78%),
+        linear-gradient(180deg, #170a43 0%, #050015 62%, #010005 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(22,10,58,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(16,8,46,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(10,6,26,0.34), rgba(4,6,16,0));
+    }
+    .section-faq {
+      --section-backdrop:
+        radial-gradient(160% 220% at 18% -18%, rgba(129,140,248,0.2), transparent 76%),
+        radial-gradient(150% 220% at 82% -14%, rgba(99,102,241,0.16), transparent 78%),
+        linear-gradient(180deg, #13083a 0%, #060016 62%, #000004 100%);
+      --section-overlay:
+        radial-gradient(200% 240% at 24% 132%, rgba(22,8,56,0.2), transparent 86%),
+        radial-gradient(200% 240% at 78% 138%, rgba(16,6,44,0.16), transparent 88%),
+        linear-gradient(180deg, rgba(8,6,24,0.36), rgba(4,6,16,0));
+    }
+    .section-lead {
+      --section-backdrop:
+        radial-gradient(200% 240% at 24% 132%, rgba(32,12,90,0.26), transparent 84%),
+        radial-gradient(200% 240% at 78% 138%, rgba(26,10,72,0.22), transparent 86%),
+        linear-gradient(180deg, #000003 0%, #03000f 60%, #0d052c 100%);
+      --section-overlay:
+        radial-gradient(160% 220% at 20% 126%, rgba(120,86,222,0.18), transparent 78%),
+        radial-gradient(150% 220% at 80% 132%, rgba(94,72,210,0.12), transparent 80%),
+        linear-gradient(180deg, rgba(4,6,16,0), rgba(8,4,24,0.36));
+    }
 
     .section-header {
       text-align: center;
@@ -2184,6 +2364,13 @@
       margin-bottom: 16px;
     }
 
+    .pricing-price span {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(229,229,229,0.82);
+    }
+
     .pricing-detail {
       color: rgba(229,229,229,0.78);
       font-size: 16px;
@@ -2207,6 +2394,15 @@
     .pricing-benefit svg {
       width: 24px;
       height: 24px;
+    }
+
+    .pricing-subnote {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: rgba(229,229,229,0.75);
+      line-height: 1.6;
     }
 
     .pricing-outcomes {
@@ -2437,6 +2633,89 @@
       font-size: 20px;
       font-weight: 700;
       color: #fff;
+    }
+
+    .scoreboard-definitions {
+      margin-top: clamp(32px, 5vw, 44px);
+      padding: clamp(24px, 4.2vw, 34px);
+      border-radius: 20px;
+      border: 1.4px solid rgba(139,92,246,0.28);
+      background: linear-gradient(140deg, rgba(20,16,44,0.92), rgba(10,8,26,0.92));
+      box-shadow: 0 26px 60px rgba(8,2,30,0.42);
+      display: grid;
+      gap: clamp(22px, 4vw, 30px);
+    }
+
+    .scoreboard-definitions header h3 {
+      margin: 0 0 8px;
+      font-size: clamp(22px, 4vw, 26px);
+      font-weight: 800;
+      color: rgba(193,200,255,0.96);
+    }
+
+    .scoreboard-definitions header p {
+      margin: 0;
+      font-size: 15px;
+      color: rgba(228,228,250,0.82);
+      line-height: 1.65;
+    }
+
+    .scoreboard-grid {
+      display: grid;
+      gap: clamp(16px, 3.4vw, 22px);
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 860px) {
+      .scoreboard-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .scoreboard-card {
+      padding: clamp(18px, 3.2vw, 22px);
+      border-radius: 14px;
+      background: rgba(6,6,18,0.65);
+      border: 1.3px solid rgba(129,140,248,0.26);
+      display: grid;
+      gap: 12px;
+      min-height: 100%;
+    }
+
+    .scoreboard-card[data-metric="trial"] { border-left: 4px solid rgba(99,102,241,0.55); }
+    .scoreboard-card[data-metric="show"] { border-left: 4px solid rgba(139,92,246,0.52); }
+    .scoreboard-card[data-metric="member"] { border-left: 4px solid rgba(165,180,252,0.55); }
+
+    .scoreboard-card strong {
+      font-size: 16px;
+      color: rgba(208,212,255,0.95);
+    }
+
+    .scoreboard-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(220,222,255,0.78);
+    }
+
+    .scoreboard-card code {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(20,20,32,0.72);
+      border: 1px solid rgba(139,92,246,0.38);
+      font-family: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, monospace;
+      font-size: 12px;
+      color: rgba(198,202,255,0.88);
+    }
+
+    .scoreboard-footnote {
+      margin: 0;
+      font-size: 13px;
+      color: rgba(210,210,240,0.78);
+      font-style: italic;
     }
 
     @media (max-width: 768px) {
@@ -3431,34 +3710,368 @@
 
     footer {
       position: relative;
-      border-top: 1px solid rgba(42,42,42,0.92);
-      padding-block: clamp(32px, 6vw, 48px);
-      text-align: center;
+      border-top: 1px solid rgba(88,72,180,0.35);
+      padding-block: clamp(48px, 8vw, 88px);
+      background:
+        radial-gradient(160% 120% at 12% -20%, rgba(106,78,220,0.25), transparent 68%),
+        radial-gradient(140% 120% at 84% -16%, rgba(72,64,196,0.18), transparent 70%),
+        linear-gradient(180deg, rgba(2,0,10,0.92) 0%, #010006 100%);
+      overflow: hidden;
     }
 
-    footer .brand {
-      font-size: clamp(28px, 4vw, 36px);
+    footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(140% 160% at 50% -60%, rgba(129,140,248,0.18), transparent 78%);
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    footer .layout-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-shell {
+      display: grid;
+      gap: clamp(32px, 6vw, 48px);
+    }
+
+    .footer-top {
+      display: grid;
+      gap: clamp(20px, 4vw, 28px);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+      align-items: start;
+    }
+
+    .footer-branding {
+      display: grid;
+      gap: clamp(12px, 3vw, 18px);
+    }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: clamp(30px, 4vw, 44px);
       font-weight: 900;
-      background: linear-gradient(120deg, var(--accentA), var(--accentB));
+      letter-spacing: -0.04em;
+      background: linear-gradient(120deg, rgba(152,124,255,1), rgba(120,86,222,1));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      letter-spacing: -0.03em;
     }
 
-    footer .tagline {
-      margin-top: 10px;
-      color: rgba(229,229,229,0.74);
+    .footer-logo svg {
+      width: clamp(36px, 4vw, 44px);
+      height: clamp(36px, 4vw, 44px);
+      color: rgba(129,140,248,0.92);
+      filter: drop-shadow(0 0 20px rgba(99,102,241,0.45));
+    }
+
+    .footer-tagline {
+      color: rgba(231,231,243,0.86);
+      font-size: clamp(15px, 2vw, 18px);
+      line-height: 1.6;
+      max-width: 460px;
+    }
+
+    .footer-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: fit-content;
+      padding: 14px 22px;
+      border-radius: 14px;
+      background: linear-gradient(118deg, rgba(129,140,248,0.9), rgba(99,102,241,0.95));
+      color: #fff;
+      font-weight: 700;
       font-size: 15px;
+      letter-spacing: 0.01em;
+      box-shadow: 0 24px 44px rgba(18,12,44,0.52);
+      transition: transform 200ms var(--transition), box-shadow 200ms var(--transition), background 200ms var(--transition);
+    }
+
+    .footer-cta svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-cta:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(118deg, rgba(152,124,255,1), rgba(129,140,248,1));
+      box-shadow: 0 32px 52px rgba(22,16,54,0.56);
+    }
+
+    .footer-cta:active {
+      transform: translateY(0);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(24px, 6vw, 40px);
+    }
+
+    details.footer-col {
+      display: grid;
+      gap: 12px;
+    }
+
+    details.footer-col > summary.footer-heading {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+
+    details.footer-col > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .footer-heading {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      color: rgba(199,200,255,0.82);
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(224,224,236,0.82);
+      font-size: 15px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 180ms var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 14px;
+      font-size: 15px;
+      color: rgba(215,216,238,0.78);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .footer-contact-item svg {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      color: rgba(129,140,248,0.85);
+    }
+
+    .footer-label {
+      display: block;
+      color: rgba(255,255,255,0.92);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .footer-contact-item a {
+      color: rgba(224,224,236,0.86);
       font-weight: 600;
     }
 
-    footer .network {
-      margin-top: 6px;
-      color: rgba(179,179,179,0.68);
+    .footer-contact-item a:hover {
+      color: #fff;
+    }
+
+    .footer-contact-item span a {
+      text-decoration: underline;
+      text-decoration-color: rgba(134,225,255,0.7);
+    }
+
+    .footer-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(18,18,36,0.78);
+      border: 1px solid rgba(120,86,222,0.28);
+      color: rgba(215,215,245,0.86);
+      transition: transform 180ms var(--transition), border-color 180ms var(--transition), color 180ms var(--transition);
+    }
+
+    .footer-social a:hover {
+      transform: translateY(-2px);
+      border-color: rgba(152,124,255,0.6);
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: clamp(24px, 4vw, 32px);
+      border-top: 1px solid rgba(55,42,120,0.4);
+      margin-top: clamp(24px, 4vw, 32px);
+      color: rgba(185,185,210,0.74);
       font-size: 13px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-legal {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-legal a {
+      color: rgba(199,199,230,0.78);
+      font-weight: 600;
+      transition: color 180ms var(--transition);
+    }
+
+    .footer-legal a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 960px) {
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      footer {
+        padding-block: clamp(40px, 12vw, 64px);
+      }
+      .footer-shell {
+        gap: clamp(28px, 9vw, 40px);
+      }
+      .footer-top {
+        gap: clamp(20px, 7vw, 28px);
+      }
+      .footer-branding {
+        gap: clamp(14px, 5vw, 20px);
+      }
+      .footer-tagline {
+        font-size: 14px;
+      }
+      .footer-cta {
+        width: 100%;
+        justify-content: center;
+      }
+      .footer-grid {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(14px, 6vw, 20px);
+      }
+      .footer-grid > * {
+        width: 100%;
+      }
+      details.footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+        border-radius: 16px;
+        border: 1px solid rgba(120,86,222,0.28);
+        background: rgba(12,12,28,0.76);
+        padding: clamp(16px, 6vw, 22px);
+        box-shadow: 0 24px 46px rgba(2,0,12,0.45);
+      }
+      details.footer-col > summary.footer-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 0;
+        cursor: pointer;
+        font-size: 13px;
+        letter-spacing: 0.06em;
+      }
+      .footer-heading {
+        margin-bottom: 0;
+      }
+      details.footer-col > summary.footer-heading::after {
+        content: "\25BC";
+        font-size: 12px;
+        color: rgba(208,209,245,0.72);
+        transition: transform 200ms var(--transition);
+      }
+      details.footer-col[open] > summary.footer-heading::after {
+        transform: rotate(180deg);
+      }
+      details.footer-col > *:not(summary) {
+        padding-top: 12px;
+      }
+      .footer-links {
+        gap: 8px;
+      }
+      .footer-links a {
+        font-size: 14px;
+      }
+      .footer-contact {
+        gap: 12px;
+      }
+      .footer-contact-item {
+        align-items: center;
+      }
+      .footer-contact-item svg {
+        margin-top: 0;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 12px;
+      }
+      .footer-social {
+        margin-top: 0;
+      }
+      .footer-social a {
+        width: 34px;
+        height: 34px;
+      }
+    }
+
+    @media (min-width: 641px) {
+      details.footer-col > summary.footer-heading {
+        pointer-events: none;
+      }
+      details.footer-col > summary.footer-heading::after {
+        display: none;
+      }
     }
 
     /* ============================== ANIMATIONS & FX ============================== */
@@ -4754,7 +5367,7 @@
               </div>
             </section>
 
-            <section class="section" aria-labelledby="section-organic">
+            <section class="section section-organic" aria-labelledby="section-organic">
               <div class="container">
               <header class="section-header">
                 <p class="section-eyebrow">Organic Short-Form</p>
@@ -5039,104 +5652,127 @@
                   <div class="calc-note">Ad spend typically starts at $600–$1,000/month. Update the scoreboard once you know your sales conversion.</div>
                 </div>
               </div>
-              <div class="pricing-layout" style="display: grid; grid-template-columns: 380px 1fr; gap: 32px; margin-top: 48px;">
-                <div class="pricing-card" style="background: rgba(10,10,18,0.7); border: 1px solid rgba(139,92,246,0.3); padding: 32px; border-radius: 12px;">
-                  <span class="pricing-label" style="display: inline-block; background: rgba(139,92,246,0.15); padding: 6px 12px; border-radius: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: rgba(139,92,246,0.95); margin-bottom: 16px;">Platform Fee</span>
-                  <div class="pricing-price" style="font-size: 52px; font-weight: 900; line-height: 1; color: #fff; margin-bottom: 12px;">$386 <span style="color: rgba(229,229,229,0.82); font-size: 18px; font-weight: 700;">/ month</span></div>
-                  <p style="font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 20px;">Infrastructure, ops, tracking & campaign management</p>
-                  <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex-shrink: 0; color: rgba(139,92,246,0.8);"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
-                      <span style="font-size: 14px;">Custom funnels</span>
+              <div class="pricing-layout">
+                <article class="pricing-card" aria-labelledby="platform-fee-heading">
+                  <span class="pricing-label">Platform Fee</span>
+                  <div class="pricing-price" id="platform-fee-heading">$386<span>/ month</span></div>
+                  <p class="pricing-detail">Infrastructure, ops, tracking &amp; campaign management</p>
+                  <div class="pricing-benefits">
+                    <div class="pricing-benefit">
+                      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
+                      <span>Custom funnels</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex-shrink: 0; color: rgba(139,92,246,0.8);"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
-                      <span style="font-size: 14px;">Ad management</span>
+                    <div class="pricing-benefit">
+                      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
+                      <span>Ad management</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex-shrink: 0; color: rgba(139,92,246,0.8);"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
-                      <span style="font-size: 14px;">Automation & tracking</span>
+                    <div class="pricing-benefit">
+                      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
+                      <span>Automation &amp; tracking</span>
                     </div>
                   </div>
-                  <p style="font-size: 12px; color: rgba(255,255,255,0.78); padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">Ad spend paid directly by your gym</p>
-                </div>
-                <div>
-                  <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;"><span class="accent-text">+ Pay-for-Outcomes</span></h3>
-                  <p style="font-size: 14px; color: rgba(255,255,255,0.82); margin-bottom: 24px;">Choose ONE metric. Pay only when we deliver.</p>
-                  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                    <div style="background: rgba(139,92,246,0.08); border: 2px solid rgba(139,92,246,0.4); border-radius: 10px; padding: 24px; position: relative;">
-                      <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: rgba(139,92,246,0.95); color: #fff; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 6px;">Popular</span>
-                      <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(139,92,246,0.95); margin-bottom: 16px; margin-top: 4px; text-align: center;">Qualified Trial</h4>
-                      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
-                        <div style="background: rgba(0,0,0,0.3); padding: 10px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-                          <span style="font-size: 13px;">1–15</span>
-                          <span style="font-size: 22px; font-weight: 900; color: rgba(139,92,246,0.95);">$28</span>
-                        </div>
-                        <div style="background: rgba(0,0,0,0.3); padding: 10px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-                          <span style="font-size: 13px;">16–30</span>
-                          <span style="font-size: 22px; font-weight: 900; color: rgba(139,92,246,0.95);">$24</span>
-                        </div>
-                        <div style="background: rgba(0,0,0,0.3); padding: 10px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-                          <span style="font-size: 13px;">31+</span>
-                          <span style="font-size: 22px; font-weight: 900; color: rgba(139,92,246,0.95);">$20</span>
-                        </div>
+                  <p class="pricing-subnote">Ad spend paid directly by your gym</p>
+                </article>
+                <div class="pricing-outcomes">
+                  <div class="outcomes-header">
+                    <span class="outcomes-tag">+ Pay-for-Outcomes</span>
+                    <h3 class="outcomes-title">Choose ONE metric. Pay only when we deliver.</h3>
+                    <p class="outcomes-copy">Pick the scoreboard that matches your sales motion. We invoice performance fees only after the agreed outcome is delivered.</p>
+                  </div>
+                  <div class="outcomes-grid">
+                    <article class="tier-card popular" aria-labelledby="scoreboard-trial-heading">
+                      <div class="tier-top">
+                        <span class="tier-chip">Popular</span>
+                        <h4 id="scoreboard-trial-heading">Qualified Trial</h4>
+                        <p class="tier-copy">Tiered pricing on qualified trials. Ideal when your team confirms intros quickly.</p>
                       </div>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.82); line-height: 1.5;">Best for most gyms</p>
-                    </div>
-                    <div style="background: rgba(10,10,18,0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 24px; text-align: center;">
-                      <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(99,102,241,0.8); margin-bottom: 20px;">Per Show</h4>
-                      <p style="font-size: 52px; font-weight: 900; line-height: 1; margin-bottom: 6px;">$45</p>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.78); margin-bottom: 16px;">each</p>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.82); line-height: 1.5; text-align: left;">Confirmed attendance only</p>
-                    </div>
-                    <div style="background: rgba(10,10,18,0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 24px; text-align: center;">
-                      <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(99,102,241,0.8); margin-bottom: 20px;">New Member</h4>
-                      <p style="font-size: 52px; font-weight: 900; line-height: 1; margin-bottom: 6px;">$140</p>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.78); margin-bottom: 16px;">each</p>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.82); line-height: 1.5; text-align: left;">Revenue-aligned pricing</p>
-                    </div>
+                      <dl class="tier-tiers">
+                        <div class="tier-line">
+                          <dt>1–15</dt>
+                          <dd>$28</dd>
+                        </div>
+                        <div class="tier-line">
+                          <dt>16–30</dt>
+                          <dd>$24</dd>
+                        </div>
+                        <div class="tier-line">
+                          <dt>31+</dt>
+                          <dd>$20</dd>
+                        </div>
+                      </dl>
+                      <p class="tier-subcopy">Best for most gyms.</p>
+                    </article>
+                    <article class="tier-card" aria-labelledby="scoreboard-show-heading">
+                      <div class="tier-top">
+                        <h4 id="scoreboard-show-heading">Per Show</h4>
+                        <p class="tier-copy">Pay when prospects show for their booked intro. Perfect once attendance is consistent.</p>
+                      </div>
+                      <p class="tier-price">$45</p>
+                      <span class="tier-metric">each</span>
+                      <ul class="tier-points">
+                        <li>
+                          <span class="inline-icon inline-icon--check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 8L6.5 11L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                          <span>Confirmed attendance only</span>
+                        </li>
+                        <li>
+                          <span class="inline-icon inline-icon--check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 8L6.5 11L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                          <span>Aligns with in-person close rate</span>
+                        </li>
+                      </ul>
+                    </article>
+                    <article class="tier-card" aria-labelledby="scoreboard-member-heading">
+                      <div class="tier-top">
+                        <h4 id="scoreboard-member-heading">New Member</h4>
+                        <p class="tier-copy">Tie fees to first dues collected for premium programs or long-term agreements.</p>
+                      </div>
+                      <p class="tier-price">$140</p>
+                      <span class="tier-metric">each</span>
+                      <ul class="tier-points">
+                        <li>
+                          <span class="inline-icon inline-icon--check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 8L6.5 11L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                          <span>Revenue-aligned pricing</span>
+                        </li>
+                        <li>
+                          <span class="inline-icon inline-icon--check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 8L6.5 11L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                          <span>Matches Stripe/CRM confirmation</span>
+                        </li>
+                      </ul>
+                    </article>
                   </div>
                 </div>
               </div>
-              <div class="pricing-example" style="background: rgba(139,92,246,0.08); padding: 16px; border-radius: 8px; border-left: 3px solid rgba(139,92,246,0.5); font-size: 14px; margin-top: 32px;">
+              <div class="pricing-example">
                 <strong>Example only (not typical):</strong> $386 base + (15 trials × $28 + 10 trials × $24) = <strong>$1,046</strong> for 25 qualified trials. Your outcomes depend on offer fit, market, and ad spend.
               </div>
 
-              <div style="margin-top: 48px; padding: 32px; background: rgba(10,10,18,0.6); border-radius: 12px; border: 1px solid rgba(139,92,246,0.2);">
-                <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 20px; color: rgba(139,92,246,0.95);">Scoreboard Definitions</h3>
-                <p style="font-size: 14px; color: rgba(255,255,255,0.82); margin-bottom: 24px;">Precise definitions reduce disputes and align with event tracking. Each scoreboard maps 1:1 to instrumented events.</p>
+              <div class="scoreboard-definitions" role="region" aria-labelledby="scoreboard-definitions-title">
+                <header>
+                  <h3 id="scoreboard-definitions-title">Scoreboard Definitions</h3>
+                  <p>Precise definitions reduce disputes and align with event tracking. Each scoreboard maps 1:1 to instrumented events.</p>
+                </header>
 
-                <div style="display: grid; gap: 20px;">
-                  <div style="padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 3px solid rgba(99,102,241,0.6);">
-                    <strong style="font-size: 16px; color: rgba(165,180,252,0.95); display: block; margin-bottom: 8px;">Qualified Trial</strong>
-                    <p style="font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75);">
-                      Prospect books intro on your calendar, confirms via SMS, and replies "Y" (or equivalent) to qualify.
-                      Event: <code style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px;">qtrial_booked</code>
-                    </p>
-                  </div>
+                <div class="scoreboard-grid">
+                  <article class="scoreboard-card" data-metric="trial">
+                    <strong>Qualified Trial</strong>
+                    <p>Prospect books an intro on your calendar, confirms via SMS, and replies “Y” (or equivalent) to qualify.</p>
+                    <p>Event: <code>qtrial_booked</code></p>
+                  </article>
 
-                  <div style="padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 3px solid rgba(139,92,246,0.6);">
-                    <strong style="font-size: 16px; color: rgba(165,180,252,0.95); display: block; margin-bottom: 8px;">Show</strong>
-                    <p style="font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75);">
-                      The booked intro logs attendance in your system or GAJO's check-in form.
-                      Event: <code style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px;">show_attended</code>
-                    </p>
-                  </div>
+                  <article class="scoreboard-card" data-metric="show">
+                    <strong>Show</strong>
+                    <p>The booked intro logs attendance in your system or GAJO’s check-in form.</p>
+                    <p>Event: <code>show_attended</code></p>
+                  </article>
 
-                  <div style="padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 3px solid rgba(129,140,248,0.6);">
-                    <strong style="font-size: 16px; color: rgba(165,180,252,0.95); display: block; margin-bottom: 8px;">New Member</strong>
-                    <p style="font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75);">
-                      First dues paid (captured via Stripe/CRM webhook or manual confirmation).
-                      Event: <code style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px;">member_activated</code>
-                    </p>
-                  </div>
+                  <article class="scoreboard-card" data-metric="member">
+                    <strong>New Member</strong>
+                    <p>First dues paid (captured via Stripe/CRM webhook or manual confirmation).</p>
+                    <p>Event: <code>member_activated</code></p>
+                  </article>
                 </div>
 
-                <p style="font-size: 13px; color: rgba(255,255,255,0.82); margin-top: 20px; font-style: italic;">
-                  All events are tracked in GA4/GTM and your dashboard. You can audit the data anytime.
-                </p>
+                <p class="scoreboard-footnote">All events are tracked in GA4/GTM and your dashboard. You can audit the data anytime.</p>
               </div>
-
               <div class="pricing-guarantee">
                 <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
                 <div>
@@ -5286,10 +5922,79 @@
           </div>
         
           <footer>
-            <div class="layout-shell pad-inline">
-              <div class="brand">GAJO</div>
-              <div class="tagline">Marketing for Martial-Arts Gyms</div>
-              <div class="network" data-placeholder="[CLIENT TO CONFIRM network reference]">Part of the DojoATL network</div>
+            <div class="layout-shell pad-inline footer-shell">
+              <div class="footer-top">
+                <div class="footer-branding">
+                  <span class="footer-logo">
+                    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 4h16l6 12-6 12H8L2 16 8 4zm2.4 4L7 16l3.4 8h11.2L25 16l-3.4-8H10.4zM16 12.5l2.6 3.5L16 19.5l-2.6-3.5L16 12.5z" fill="currentColor" /></svg>
+                    GAJO
+                  </span>
+                  <p class="footer-tagline">72-hour launch marketing engineered for martial-arts gyms. Performance pricing, proven funnels, and a senior strike team ready to fill your mats.</p>
+                  <a class="footer-cta" href="#lead-form">
+                    <span>Book Your Free Audit</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                  </a>
+                  <div class="footer-social" aria-label="Social media">
+                    <a href="#" aria-label="Follow GAJO on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 3.4A3.6 3.6 0 1 1 8.4 13 3.6 3.6 0 0 1 12 8.4zm0 2A1.6 1.6 0 1 0 13.6 12 1.6 1.6 0 0 0 12 10.4zm5-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z" fill="currentColor" /></svg></a>
+                    <a href="#" aria-label="Connect with GAJO on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1-.01 5.01 2.5 2.5 0 0 1 .01-5.01zM3 9h4v12H3zm7.5 0H14v1.7h.06c.5-1 1.74-2 3.59-2 3.84 0 4.55 2.53 4.55 5.82V21H18v-5.3c0-1.26-.03-2.88-1.76-2.88-1.76 0-2.03 1.38-2.03 2.79V21h-4z" fill="currentColor" /></svg></a>
+                    <a href="#" aria-label="Subscribe to GAJO on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.4 2.4 0 0 0-1.7-1.7C18 5 12 5 12 5s-6 0-7.9.5a2.4 2.4 0 0 0-1.7 1.7A25 25 0 0 0 2 12a25 25 0 0 0 .4 4.8 2.4 2.4 0 0 0 1.7 1.7C6 19 12 19 12 19s6 0 7.9-.5a2.4 2.4 0 0 0 1.7-1.7A25 25 0 0 0 22 12a25 25 0 0 0-.4-4.8zM10 15V9l5.2 3z" fill="currentColor" /></svg></a>
+                  </div>
+                </div>
+                <div class="footer-grid" role="navigation" aria-label="Footer">
+                  <details class="footer-col" open>
+                    <summary class="footer-heading">Solutions</summary>
+                    <ul class="footer-links">
+                      <li><a href="#playbook">72-Hour Launch System</a></li>
+                      <li><a href="#comparison">GAJO vs. DIY Ads</a></li>
+                      <li><a href="#pricing">PH-386 Performance Pricing</a></li>
+                      <li><a href="#faq">KPI Guarantee Program</a></li>
+                    </ul>
+                  </details>
+                  <details class="footer-col" open>
+                    <summary class="footer-heading">Resources</summary>
+                    <ul class="footer-links">
+                      <li><a href="#resources">Creative Swipe File</a></li>
+                      <li><a href="#lead-form">Audit Checklist</a></li>
+                      <li><a href="#faq">FAQ &amp; Playbooks</a></li>
+                      <li><a href="#team">Who We Work With</a></li>
+                    </ul>
+                  </details>
+                  <details class="footer-col" open>
+                    <summary class="footer-heading">Get in touch</summary>
+                    <div class="footer-contact">
+                      <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8a9 9 0 1 1-18 0 9 9 0 0 1 18 0zm-8.4-2.4a1.6 1.6 0 1 0-3.2 0v1.3a1.6 1.6 0 0 0 3.2 0zm0 5.4a1.6 1.6 0 1 0-3.2 0v1.3a1.6 1.6 0 0 0 3.2 0z" fill="currentColor" /></svg>
+                        <div>
+                          <span class="footer-label">Schedule</span>
+                          <span>Book a 15-minute alignment call → <a href="#lead-form">Calendly</a></span>
+                        </div>
+                      </div>
+                      <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H5.17L4 17.17z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /><path d="M22 6l-10 7L2 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                        <div>
+                          <span class="footer-label">Email</span>
+                          <a href="mailto:launch@gajo.example">launch@gajo.example</a>
+                        </div>
+                      </div>
+                      <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 3.1A2 2 0 0 1 7.5 2l2.1.5a2 2 0 0 1 1.5 1.9v2.2a1.5 1.5 0 0 1-.4 1l-1 1.1a12 12 0 0 0 5.6 5.6l1.1-1a1.5 1.5 0 0 1 1-.4h2.2a2 2 0 0 1 1.9 1.5l.5 2.1a2 2 0 0 1-1.1 2.4 6.4 6.4 0 0 1-2.7.6c-7.3 0-13.2-5.9-13.2-13.2a6.4 6.4 0 0 1 .6-2.7z" fill="currentColor" /></svg>
+                        <div>
+                          <span class="footer-label">Call</span>
+                          <a href="tel:+17705551234">(770) 555-1234</a>
+                        </div>
+                      </div>
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                <span>© 2024 GAJO. Built for martial-arts gym owners ready to scale.</span>
+                <div class="footer-legal">
+                  <a href="#">Privacy Policy</a>
+                  <a href="#">Terms</a>
+                  <a href="#">Brand Assets</a>
+                </div>
+              </div>
             </div>
           </footer>
         
