@@ -2364,6 +2364,13 @@
       margin-bottom: 16px;
     }
 
+    .pricing-price span {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(229,229,229,0.82);
+    }
+
     .pricing-detail {
       color: rgba(229,229,229,0.78);
       font-size: 16px;
@@ -2387,6 +2394,15 @@
     .pricing-benefit svg {
       width: 24px;
       height: 24px;
+    }
+
+    .pricing-subnote {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: rgba(229,229,229,0.75);
+      line-height: 1.6;
     }
 
     .pricing-outcomes {
@@ -2617,6 +2633,89 @@
       font-size: 20px;
       font-weight: 700;
       color: #fff;
+    }
+
+    .scoreboard-definitions {
+      margin-top: clamp(32px, 5vw, 44px);
+      padding: clamp(24px, 4.2vw, 34px);
+      border-radius: 20px;
+      border: 1.4px solid rgba(139,92,246,0.28);
+      background: linear-gradient(140deg, rgba(20,16,44,0.92), rgba(10,8,26,0.92));
+      box-shadow: 0 26px 60px rgba(8,2,30,0.42);
+      display: grid;
+      gap: clamp(22px, 4vw, 30px);
+    }
+
+    .scoreboard-definitions header h3 {
+      margin: 0 0 8px;
+      font-size: clamp(22px, 4vw, 26px);
+      font-weight: 800;
+      color: rgba(193,200,255,0.96);
+    }
+
+    .scoreboard-definitions header p {
+      margin: 0;
+      font-size: 15px;
+      color: rgba(228,228,250,0.82);
+      line-height: 1.65;
+    }
+
+    .scoreboard-grid {
+      display: grid;
+      gap: clamp(16px, 3.4vw, 22px);
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 860px) {
+      .scoreboard-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .scoreboard-card {
+      padding: clamp(18px, 3.2vw, 22px);
+      border-radius: 14px;
+      background: rgba(6,6,18,0.65);
+      border: 1.3px solid rgba(129,140,248,0.26);
+      display: grid;
+      gap: 12px;
+      min-height: 100%;
+    }
+
+    .scoreboard-card[data-metric="trial"] { border-left: 4px solid rgba(99,102,241,0.55); }
+    .scoreboard-card[data-metric="show"] { border-left: 4px solid rgba(139,92,246,0.52); }
+    .scoreboard-card[data-metric="member"] { border-left: 4px solid rgba(165,180,252,0.55); }
+
+    .scoreboard-card strong {
+      font-size: 16px;
+      color: rgba(208,212,255,0.95);
+    }
+
+    .scoreboard-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(220,222,255,0.78);
+    }
+
+    .scoreboard-card code {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(20,20,32,0.72);
+      border: 1px solid rgba(139,92,246,0.38);
+      font-family: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, monospace;
+      font-size: 12px;
+      color: rgba(198,202,255,0.88);
+    }
+
+    .scoreboard-footnote {
+      margin: 0;
+      font-size: 13px;
+      color: rgba(210,210,240,0.78);
+      font-style: italic;
     }
 
     @media (max-width: 768px) {
@@ -5219,104 +5318,127 @@
                   <div class="calc-note">Ad spend typically starts at $600–$1,000/month. Update the scoreboard once you know your sales conversion.</div>
                 </div>
               </div>
-              <div class="pricing-layout" style="display: grid; grid-template-columns: 380px 1fr; gap: 32px; margin-top: 48px;">
-                <div class="pricing-card" style="background: rgba(10,10,18,0.7); border: 1px solid rgba(139,92,246,0.3); padding: 32px; border-radius: 12px;">
-                  <span class="pricing-label" style="display: inline-block; background: rgba(139,92,246,0.15); padding: 6px 12px; border-radius: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: rgba(139,92,246,0.95); margin-bottom: 16px;">Platform Fee</span>
-                  <div class="pricing-price" style="font-size: 52px; font-weight: 900; line-height: 1; color: #fff; margin-bottom: 12px;">$386 <span style="color: rgba(229,229,229,0.82); font-size: 18px; font-weight: 700;">/ month</span></div>
-                  <p style="font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 20px;">Infrastructure, ops, tracking & campaign management</p>
-                  <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex-shrink: 0; color: rgba(139,92,246,0.8);"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
-                      <span style="font-size: 14px;">Custom funnels</span>
+              <div class="pricing-layout">
+                <article class="pricing-card" aria-labelledby="platform-fee-heading">
+                  <span class="pricing-label">Platform Fee</span>
+                  <div class="pricing-price" id="platform-fee-heading">$386<span>/ month</span></div>
+                  <p class="pricing-detail">Infrastructure, ops, tracking &amp; campaign management</p>
+                  <div class="pricing-benefits">
+                    <div class="pricing-benefit">
+                      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
+                      <span>Custom funnels</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex-shrink: 0; color: rgba(139,92,246,0.8);"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
-                      <span style="font-size: 14px;">Ad management</span>
+                    <div class="pricing-benefit">
+                      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
+                      <span>Ad management</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex-shrink: 0; color: rgba(139,92,246,0.8);"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
-                      <span style="font-size: 14px;">Automation & tracking</span>
+                    <div class="pricing-benefit">
+                      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
+                      <span>Automation &amp; tracking</span>
                     </div>
                   </div>
-                  <p style="font-size: 12px; color: rgba(255,255,255,0.78); padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">Ad spend paid directly by your gym</p>
-                </div>
-                <div>
-                  <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;"><span class="accent-text">+ Pay-for-Outcomes</span></h3>
-                  <p style="font-size: 14px; color: rgba(255,255,255,0.82); margin-bottom: 24px;">Choose ONE metric. Pay only when we deliver.</p>
-                  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                    <div style="background: rgba(139,92,246,0.08); border: 2px solid rgba(139,92,246,0.4); border-radius: 10px; padding: 24px; position: relative;">
-                      <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: rgba(139,92,246,0.95); color: #fff; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 6px;">Popular</span>
-                      <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(139,92,246,0.95); margin-bottom: 16px; margin-top: 4px; text-align: center;">Qualified Trial</h4>
-                      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
-                        <div style="background: rgba(0,0,0,0.3); padding: 10px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-                          <span style="font-size: 13px;">1–15</span>
-                          <span style="font-size: 22px; font-weight: 900; color: rgba(139,92,246,0.95);">$28</span>
-                        </div>
-                        <div style="background: rgba(0,0,0,0.3); padding: 10px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-                          <span style="font-size: 13px;">16–30</span>
-                          <span style="font-size: 22px; font-weight: 900; color: rgba(139,92,246,0.95);">$24</span>
-                        </div>
-                        <div style="background: rgba(0,0,0,0.3); padding: 10px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-                          <span style="font-size: 13px;">31+</span>
-                          <span style="font-size: 22px; font-weight: 900; color: rgba(139,92,246,0.95);">$20</span>
-                        </div>
+                  <p class="pricing-subnote">Ad spend paid directly by your gym</p>
+                </article>
+                <div class="pricing-outcomes">
+                  <div class="outcomes-header">
+                    <span class="outcomes-tag">+ Pay-for-Outcomes</span>
+                    <h3 class="outcomes-title">Choose ONE metric. Pay only when we deliver.</h3>
+                    <p class="outcomes-copy">Pick the scoreboard that matches your sales motion. We invoice performance fees only after the agreed outcome is delivered.</p>
+                  </div>
+                  <div class="outcomes-grid">
+                    <article class="tier-card popular" aria-labelledby="scoreboard-trial-heading">
+                      <div class="tier-top">
+                        <span class="tier-chip">Popular</span>
+                        <h4 id="scoreboard-trial-heading">Qualified Trial</h4>
+                        <p class="tier-copy">Tiered pricing on qualified trials. Ideal when your team confirms intros quickly.</p>
                       </div>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.82); line-height: 1.5;">Best for most gyms</p>
-                    </div>
-                    <div style="background: rgba(10,10,18,0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 24px; text-align: center;">
-                      <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(99,102,241,0.8); margin-bottom: 20px;">Per Show</h4>
-                      <p style="font-size: 52px; font-weight: 900; line-height: 1; margin-bottom: 6px;">$45</p>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.78); margin-bottom: 16px;">each</p>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.82); line-height: 1.5; text-align: left;">Confirmed attendance only</p>
-                    </div>
-                    <div style="background: rgba(10,10,18,0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 24px; text-align: center;">
-                      <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(99,102,241,0.8); margin-bottom: 20px;">New Member</h4>
-                      <p style="font-size: 52px; font-weight: 900; line-height: 1; margin-bottom: 6px;">$140</p>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.78); margin-bottom: 16px;">each</p>
-                      <p style="font-size: 12px; color: rgba(255,255,255,0.82); line-height: 1.5; text-align: left;">Revenue-aligned pricing</p>
-                    </div>
+                      <dl class="tier-tiers">
+                        <div class="tier-line">
+                          <dt>1–15</dt>
+                          <dd>$28</dd>
+                        </div>
+                        <div class="tier-line">
+                          <dt>16–30</dt>
+                          <dd>$24</dd>
+                        </div>
+                        <div class="tier-line">
+                          <dt>31+</dt>
+                          <dd>$20</dd>
+                        </div>
+                      </dl>
+                      <p class="tier-subcopy">Best for most gyms.</p>
+                    </article>
+                    <article class="tier-card" aria-labelledby="scoreboard-show-heading">
+                      <div class="tier-top">
+                        <h4 id="scoreboard-show-heading">Per Show</h4>
+                        <p class="tier-copy">Pay when prospects show for their booked intro. Perfect once attendance is consistent.</p>
+                      </div>
+                      <p class="tier-price">$45</p>
+                      <span class="tier-metric">each</span>
+                      <ul class="tier-points">
+                        <li>
+                          <span class="inline-icon inline-icon--check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 8L6.5 11L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                          <span>Confirmed attendance only</span>
+                        </li>
+                        <li>
+                          <span class="inline-icon inline-icon--check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 8L6.5 11L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                          <span>Aligns with in-person close rate</span>
+                        </li>
+                      </ul>
+                    </article>
+                    <article class="tier-card" aria-labelledby="scoreboard-member-heading">
+                      <div class="tier-top">
+                        <h4 id="scoreboard-member-heading">New Member</h4>
+                        <p class="tier-copy">Tie fees to first dues collected for premium programs or long-term agreements.</p>
+                      </div>
+                      <p class="tier-price">$140</p>
+                      <span class="tier-metric">each</span>
+                      <ul class="tier-points">
+                        <li>
+                          <span class="inline-icon inline-icon--check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 8L6.5 11L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                          <span>Revenue-aligned pricing</span>
+                        </li>
+                        <li>
+                          <span class="inline-icon inline-icon--check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 8L6.5 11L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                          <span>Matches Stripe/CRM confirmation</span>
+                        </li>
+                      </ul>
+                    </article>
                   </div>
                 </div>
               </div>
-              <div class="pricing-example" style="background: rgba(139,92,246,0.08); padding: 16px; border-radius: 8px; border-left: 3px solid rgba(139,92,246,0.5); font-size: 14px; margin-top: 32px;">
+              <div class="pricing-example">
                 <strong>Example only (not typical):</strong> $386 base + (15 trials × $28 + 10 trials × $24) = <strong>$1,046</strong> for 25 qualified trials. Your outcomes depend on offer fit, market, and ad spend.
               </div>
 
-              <div style="margin-top: 48px; padding: 32px; background: rgba(10,10,18,0.6); border-radius: 12px; border: 1px solid rgba(139,92,246,0.2);">
-                <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 20px; color: rgba(139,92,246,0.95);">Scoreboard Definitions</h3>
-                <p style="font-size: 14px; color: rgba(255,255,255,0.82); margin-bottom: 24px;">Precise definitions reduce disputes and align with event tracking. Each scoreboard maps 1:1 to instrumented events.</p>
+              <div class="scoreboard-definitions" role="region" aria-labelledby="scoreboard-definitions-title">
+                <header>
+                  <h3 id="scoreboard-definitions-title">Scoreboard Definitions</h3>
+                  <p>Precise definitions reduce disputes and align with event tracking. Each scoreboard maps 1:1 to instrumented events.</p>
+                </header>
 
-                <div style="display: grid; gap: 20px;">
-                  <div style="padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 3px solid rgba(99,102,241,0.6);">
-                    <strong style="font-size: 16px; color: rgba(165,180,252,0.95); display: block; margin-bottom: 8px;">Qualified Trial</strong>
-                    <p style="font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75);">
-                      Prospect books intro on your calendar, confirms via SMS, and replies "Y" (or equivalent) to qualify.
-                      Event: <code style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px;">qtrial_booked</code>
-                    </p>
-                  </div>
+                <div class="scoreboard-grid">
+                  <article class="scoreboard-card" data-metric="trial">
+                    <strong>Qualified Trial</strong>
+                    <p>Prospect books an intro on your calendar, confirms via SMS, and replies “Y” (or equivalent) to qualify.</p>
+                    <p>Event: <code>qtrial_booked</code></p>
+                  </article>
 
-                  <div style="padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 3px solid rgba(139,92,246,0.6);">
-                    <strong style="font-size: 16px; color: rgba(165,180,252,0.95); display: block; margin-bottom: 8px;">Show</strong>
-                    <p style="font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75);">
-                      The booked intro logs attendance in your system or GAJO's check-in form.
-                      Event: <code style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px;">show_attended</code>
-                    </p>
-                  </div>
+                  <article class="scoreboard-card" data-metric="show">
+                    <strong>Show</strong>
+                    <p>The booked intro logs attendance in your system or GAJO’s check-in form.</p>
+                    <p>Event: <code>show_attended</code></p>
+                  </article>
 
-                  <div style="padding: 16px; background: rgba(0,0,0,0.3); border-radius: 8px; border-left: 3px solid rgba(129,140,248,0.6);">
-                    <strong style="font-size: 16px; color: rgba(165,180,252,0.95); display: block; margin-bottom: 8px;">New Member</strong>
-                    <p style="font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75);">
-                      First dues paid (captured via Stripe/CRM webhook or manual confirmation).
-                      Event: <code style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px;">member_activated</code>
-                    </p>
-                  </div>
+                  <article class="scoreboard-card" data-metric="member">
+                    <strong>New Member</strong>
+                    <p>First dues paid (captured via Stripe/CRM webhook or manual confirmation).</p>
+                    <p>Event: <code>member_activated</code></p>
+                  </article>
                 </div>
 
-                <p style="font-size: 13px; color: rgba(255,255,255,0.82); margin-top: 20px; font-style: italic;">
-                  All events are tracked in GA4/GTM and your dashboard. You can audit the data anytime.
-                </p>
+                <p class="scoreboard-footnote">All events are tracked in GA4/GTM and your dashboard. You can audit the data anytime.</p>
               </div>
-
               <div class="pricing-guarantee">
                 <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
                 <div>
