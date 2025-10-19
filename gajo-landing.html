@@ -3816,6 +3816,22 @@
       gap: clamp(24px, 6vw, 40px);
     }
 
+    details.footer-col {
+      display: grid;
+      gap: 12px;
+    }
+
+    details.footer-col > summary.footer-heading {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+
+    details.footer-col > summary::-webkit-details-marker {
+      display: none;
+    }
+
     .footer-heading {
       font-size: 15px;
       font-weight: 700;
@@ -3955,15 +3971,97 @@
     }
 
     @media (max-width: 640px) {
+      footer {
+        padding-block: clamp(40px, 12vw, 64px);
+      }
+      .footer-shell {
+        gap: clamp(28px, 9vw, 40px);
+      }
+      .footer-top {
+        gap: clamp(20px, 7vw, 28px);
+      }
+      .footer-branding {
+        gap: clamp(14px, 5vw, 20px);
+      }
+      .footer-tagline {
+        font-size: 14px;
+      }
+      .footer-cta {
+        width: 100%;
+        justify-content: center;
+      }
       .footer-grid {
         grid-template-columns: 1fr;
+        gap: clamp(14px, 6vw, 20px);
+      }
+      details.footer-col {
+        border-radius: 16px;
+        border: 1px solid rgba(120,86,222,0.28);
+        background: rgba(12,12,28,0.76);
+        padding: clamp(16px, 6vw, 22px);
+        box-shadow: 0 24px 46px rgba(2,0,12,0.45);
+      }
+      details.footer-col > summary.footer-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 0;
+        cursor: pointer;
+        font-size: 13px;
+        letter-spacing: 0.06em;
+      }
+      .footer-heading {
+        margin-bottom: 0;
+      }
+      details.footer-col > summary.footer-heading::after {
+        content: "\25BC";
+        font-size: 12px;
+        color: rgba(208,209,245,0.72);
+        transition: transform 200ms var(--transition);
+      }
+      details.footer-col[open] > summary.footer-heading::after {
+        transform: rotate(180deg);
+      }
+      details.footer-col > *:not(summary) {
+        padding-top: 12px;
+      }
+      .footer-links {
+        gap: 8px;
+      }
+      .footer-links a {
+        font-size: 14px;
+      }
+      .footer-contact {
+        gap: 12px;
+      }
+      .footer-contact-item {
+        align-items: center;
+      }
+      .footer-contact-item svg {
+        margin-top: 0;
       }
       .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
+        gap: 12px;
+        font-size: 12px;
       }
       .footer-social {
         margin-top: 0;
+      }
+      .footer-social a {
+        width: 34px;
+        height: 34px;
+      }
+    }
+
+    @media (min-width: 641px) {
+      details.footer-col > summary.footer-heading {
+        pointer-events: none;
+      }
+      details.footer-col > summary.footer-heading::after {
+        display: none;
       }
     }
 
@@ -5834,26 +5932,26 @@
                   </div>
                 </div>
                 <div class="footer-grid" role="navigation" aria-label="Footer">
-                  <div class="footer-col">
-                    <h3 class="footer-heading">Solutions</h3>
+                  <details class="footer-col" open>
+                    <summary class="footer-heading">Solutions</summary>
                     <ul class="footer-links">
                       <li><a href="#playbook">72-Hour Launch System</a></li>
                       <li><a href="#comparison">GAJO vs. DIY Ads</a></li>
                       <li><a href="#pricing">PH-386 Performance Pricing</a></li>
                       <li><a href="#faq">KPI Guarantee Program</a></li>
                     </ul>
-                  </div>
-                  <div class="footer-col">
-                    <h3 class="footer-heading">Resources</h3>
+                  </details>
+                  <details class="footer-col" open>
+                    <summary class="footer-heading">Resources</summary>
                     <ul class="footer-links">
                       <li><a href="#resources">Creative Swipe File</a></li>
                       <li><a href="#lead-form">Audit Checklist</a></li>
                       <li><a href="#faq">FAQ &amp; Playbooks</a></li>
                       <li><a href="#team">Who We Work With</a></li>
                     </ul>
-                  </div>
-                  <div class="footer-col">
-                    <h3 class="footer-heading">Get in touch</h3>
+                  </details>
+                  <details class="footer-col" open>
+                    <summary class="footer-heading">Get in touch</summary>
                     <div class="footer-contact">
                       <div class="footer-contact-item">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8a9 9 0 1 1-18 0 9 9 0 0 1 18 0zm-8.4-2.4a1.6 1.6 0 1 0-3.2 0v1.3a1.6 1.6 0 0 0 3.2 0zm0 5.4a1.6 1.6 0 1 0-3.2 0v1.3a1.6 1.6 0 0 0 3.2 0z" fill="currentColor" /></svg>
@@ -5877,7 +5975,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </details>
                 </div>
               </div>
               <div class="footer-bottom">
