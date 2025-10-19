@@ -3991,10 +3991,19 @@
         justify-content: center;
       }
       .footer-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: clamp(14px, 6vw, 20px);
       }
+      .footer-grid > * {
+        width: 100%;
+      }
       details.footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
         border-radius: 16px;
         border: 1px solid rgba(120,86,222,0.28);
         background: rgba(12,12,28,0.76);
