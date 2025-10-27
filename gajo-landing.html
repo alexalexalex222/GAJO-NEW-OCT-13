@@ -217,7 +217,7 @@
       padding-top: var(--header-h);
       padding-left: max(16px, var(--safe-left));
       padding-right: max(16px, var(--safe-right));
-      padding-bottom: max(32px, var(--safe-bottom));
+      padding-bottom: var(--safe-bottom);
       background:
         radial-gradient(1200px 900px at 16% 10%, rgba(129,140,248,0.22), transparent 76%),
         radial-gradient(1100px 820px at 82% 8%, rgba(79,70,229,0.18), transparent 72%),
@@ -1222,8 +1222,13 @@
       padding: clamp(24px, 3vh, 48px);
       display: grid;
       gap: var(--space-6);
-      overflow: auto; /* FOLD-LOCK: scroll if content exceeds viewport */
-      max-height: calc(var(--fold-max) - 2 * var(--y-pad)); /* FOLD-LOCK: never taller than hero minus padding */
+      overflow: hidden; /* Prevent scrollbars in dashboard preview */
+      max-height: none;
+      scrollbar-width: none;
+    }
+
+    .hero-aside-card::-webkit-scrollbar {
+      display: none;
     }
 
     @media (max-width: 768px) {
