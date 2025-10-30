@@ -25,12 +25,14 @@ a:hover {
   @apply bg-nightLight/60 border border-white/5 backdrop-blur-xl shadow-glass rounded-2xl;
 }
 
-.focus-visible {
-  @apply outline-none ring-2 ring-offset-2 ring-offset-nightLight ring-blue;
-}
-
 html:focus-within {
   scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply outline-none ring-2 ring-offset-2 ring-offset-nightLight ring-blue;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

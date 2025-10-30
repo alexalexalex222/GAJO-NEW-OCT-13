@@ -22,7 +22,7 @@ export default function FAQ({ faq }: FAQProps) {
             <div key={item.q} className="py-4">
               <button
                 type="button"
-                className="flex w-full items-center justify-between gap-4 text-left text-sm text-mist transition hover:text-white focus-visible"
+                className="flex w-full items-center justify-between gap-4 text-left text-sm text-mist transition hover:text-white focus:outline-none focus-visible:focus-ring"
                 aria-expanded={isOpen}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
               >

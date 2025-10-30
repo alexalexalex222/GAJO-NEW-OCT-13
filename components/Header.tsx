@@ -39,7 +39,10 @@ export default function Header({ navigation }: HeaderProps) {
       )}
     >
       <div className="mx-auto flex max-w-[1272px] items-center justify-between px-4 py-4 md:px-8">
-        <Link href="#main" className="text-lg font-semibold tracking-tight text-mist focus-visible">
+        <Link
+          href="#main"
+          className="text-lg font-semibold tracking-tight text-mist focus:outline-none focus-visible:focus-ring"
+        >
           {navigation.logo}
         </Link>
         <nav
@@ -47,7 +50,11 @@ export default function Header({ navigation }: HeaderProps) {
           className="hidden items-center gap-8 text-sm font-medium text-mist md:flex"
         >
           {navigation.links.map((link) => (
-            <Link key={link.href} href={link.href} className="transition hover:text-white focus-visible">
+            <Link
+              key={link.href}
+              href={link.href}
+              className="transition hover:text-white focus:outline-none focus-visible:focus-ring"
+            >
               {link.label}
             </Link>
           ))}
@@ -55,7 +62,7 @@ export default function Header({ navigation }: HeaderProps) {
         <div className="hidden md:flex">
           <Link
             href={navigation.cta.href}
-            className="rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-mist transition hover:bg-white/20 focus-visible"
+            className="rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-mist transition hover:bg-white/20 focus:outline-none focus-visible:focus-ring"
             onClick={() => window.gajoTrack?.('cta_click_nav')}
           >
             {navigation.cta.label}
@@ -63,7 +70,7 @@ export default function Header({ navigation }: HeaderProps) {
         </div>
         <button
           type="button"
-          className="flex items-center justify-center rounded-full border border-white/20 p-2 text-mist transition hover:border-white/40 focus-visible md:hidden"
+          className="flex items-center justify-center rounded-full border border-white/20 p-2 text-mist transition hover:border-white/40 focus:outline-none focus-visible:focus-ring md:hidden"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           onClick={() => setIsOpen((value) => !value)}
@@ -90,7 +97,7 @@ export default function Header({ navigation }: HeaderProps) {
             <Link
               key={link.href}
               href={link.href}
-              className="transition hover:text-white focus-visible"
+              className="transition hover:text-white focus:outline-none focus-visible:focus-ring"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
@@ -98,7 +105,7 @@ export default function Header({ navigation }: HeaderProps) {
           ))}
           <Link
             href={navigation.cta.href}
-            className="rounded-full bg-teal/90 px-5 py-2 text-center font-semibold text-night transition hover:bg-teal focus-visible"
+            className="rounded-full bg-teal/90 px-5 py-2 text-center font-semibold text-night transition hover:bg-teal focus:outline-none focus-visible:focus-ring"
             onClick={() => {
               setIsOpen(false);
               window.gajoTrack?.('cta_click_nav');

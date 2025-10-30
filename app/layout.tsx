@@ -40,7 +40,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         suppressHydrationWarning
       >
         <AnalyticsProvider />
-        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus-visible">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:outline-none focus-visible:focus-ring"
+        >
           {siteContent.a11y.skipToContent}
         </a>
         <Header navigation={siteContent.navigation} />

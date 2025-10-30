@@ -145,7 +145,7 @@ export default function LeadForm({ form }: LeadFormProps) {
                     placeholder={field.placeholder}
                     required={field.required}
                     {...commonProps}
-                    className="rounded-xl border border-white/10 bg-night/60 px-4 py-3 text-white focus-visible"
+                    className="rounded-xl border border-white/10 bg-night/60 px-4 py-3 text-white focus:outline-none focus-visible:focus-ring"
                   />
                 </label>
               );
@@ -172,7 +172,7 @@ export default function LeadForm({ form }: LeadFormProps) {
           <p className="text-xs text-mistMuted">{form.privacy}</p>
           <button
             type="submit"
-            className="rounded-full bg-blue px-6 py-3 text-sm font-semibold text-night transition hover:bg-blue/80 focus-visible"
+            className="rounded-full bg-blue px-6 py-3 text-sm font-semibold text-night transition hover:bg-blue/80 focus:outline-none focus-visible:focus-ring"
             disabled={status === 'loading'}
           >
             {status === 'loading' ? form.loadingLabel : currentStep.cta}

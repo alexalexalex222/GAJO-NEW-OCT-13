@@ -15,18 +15,28 @@ export default function Footer({ footer }: FooterProps) {
           <p className="font-semibold text-mist">{`${footer.legal}${year}${footer.legalSuffix}`}</p>
           <p>{footer.address}</p>
           <p>
-            <a href={`mailto:${footer.contact.email}`} className="hover:text-white focus-visible">
+            <a
+              href={`mailto:${footer.contact.email}`}
+              className="hover:text-white focus:outline-none focus-visible:focus-ring"
+            >
               {footer.contact.email}
             </a>{' '}
             •{' '}
-            <a href={`tel:${footer.contact.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-white focus-visible">
+            <a
+              href={`tel:${footer.contact.phone.replace(/[^0-9+]/g, '')}`}
+              className="hover:text-white focus:outline-none focus-visible:focus-ring"
+            >
               {footer.contact.phone}
             </a>
           </p>
         </div>
         <nav className="flex gap-4">
           {footer.links.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-white focus-visible">
+            <Link
+              key={link.href}
+              href={link.href}
+              className="hover:text-white focus:outline-none focus-visible:focus-ring"
+            >
               {link.label}
             </Link>
           ))}

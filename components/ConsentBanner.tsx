@@ -46,7 +46,7 @@ export default function ConsentBanner({ consent }: ConsentBannerProps) {
           <div className="flex gap-3">
             <button
               type="button"
-              className="rounded-full bg-teal px-4 py-2 text-sm font-semibold text-night transition hover:bg-teal/90 focus-visible"
+              className="rounded-full bg-teal px-4 py-2 text-sm font-semibold text-night transition hover:bg-teal/90 focus:outline-none focus-visible:focus-ring"
               onClick={() => {
                 setState('accepted');
                 window.gajoTrack?.('consent_accept');
@@ -56,7 +56,7 @@ export default function ConsentBanner({ consent }: ConsentBannerProps) {
             </button>
             <button
               type="button"
-              className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-mist transition hover:border-white/30 focus-visible"
+              className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-mist transition hover:border-white/30 focus:outline-none focus-visible:focus-ring"
               onClick={() => {
                 setState('declined');
                 window.gajoTrack?.('consent_decline');
@@ -67,7 +67,7 @@ export default function ConsentBanner({ consent }: ConsentBannerProps) {
           </div>
           <button
             type="button"
-            className="text-xs text-mistMuted underline underline-offset-4 hover:text-mist focus-visible"
+            className="text-xs text-mistMuted underline underline-offset-4 hover:text-mist focus:outline-none focus-visible:focus-ring"
             onClick={() => window.gajoTrack?.('consent_manage')}
           >
             {consent.manage}

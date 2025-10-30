@@ -93,7 +93,7 @@ export default function PricingCalculator({ pricing }: PricingCalculatorProps) {
             aria-selected={active.id === tab.id}
             aria-controls={`panel-${tab.id}`}
             id={`tab-${tab.id}`}
-            className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible ${
+            className={`rounded-full px-4 py-2 text-sm font-semibold transition focus:outline-none focus-visible:focus-ring ${
               active.id === tab.id ? 'bg-teal text-night' : 'bg-white/10 text-mist hover:bg-white/20'
             }`}
             onClick={() => setActive(tab)}
@@ -132,7 +132,7 @@ export default function PricingCalculator({ pricing }: PricingCalculatorProps) {
               value={unitValue}
               placeholder={pricing.unitInputPlaceholder}
               onChange={(event) => setUnitValue(event.target.value)}
-              className="rounded-xl border border-white/10 bg-night/60 px-4 py-3 text-white focus-visible"
+              className="rounded-xl border border-white/10 bg-night/60 px-4 py-3 text-white focus:outline-none focus-visible:focus-ring"
             />
           </label>
           <label className="flex items-center gap-3 text-sm text-mist">
@@ -140,7 +140,7 @@ export default function PricingCalculator({ pricing }: PricingCalculatorProps) {
               type="checkbox"
               checked={capEnabled}
               onChange={(event) => setCapEnabled(event.target.checked)}
-              className="h-5 w-5 rounded border border-white/20 bg-night/80 focus-visible"
+              className="h-5 w-5 rounded border border-white/20 bg-night/80 focus:outline-none focus-visible:focus-ring"
             />
             <span>{pricing.hardCapToggle}</span>
           </label>
@@ -153,7 +153,7 @@ export default function PricingCalculator({ pricing }: PricingCalculatorProps) {
                 value={capValue}
                 placeholder={pricing.hardCapPlaceholder}
                 onChange={(event) => setCapValue(event.target.value)}
-                className="rounded-xl border border-white/10 bg-night/60 px-4 py-3 text-white focus-visible"
+                className="rounded-xl border border-white/10 bg-night/60 px-4 py-3 text-white focus:outline-none focus-visible:focus-ring"
               />
               <span className="text-xs text-mistMuted">{pricing.hardCapNote}</span>
             </label>
@@ -179,7 +179,7 @@ export default function PricingCalculator({ pricing }: PricingCalculatorProps) {
           <button
             type="button"
             onClick={copyBreakdown}
-            className="self-start rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-mist transition hover:border-white/40 focus-visible"
+            className="self-start rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-mist transition hover:border-white/40 focus:outline-none focus-visible:focus-ring"
           >
             {clipboard === 'copied' ? pricing.copiedLabel : pricing.copyExample}
           </button>

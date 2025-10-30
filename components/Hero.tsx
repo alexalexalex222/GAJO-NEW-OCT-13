@@ -45,14 +45,14 @@ export default function Hero({ hero }: HeroProps) {
         <div className="flex flex-col gap-3 sm:flex-row">
           <a
             href={hero.ctaPrimaryHref}
-            className="inline-flex items-center justify-center rounded-full bg-teal px-6 py-3 text-base font-semibold text-night transition hover:bg-teal/90 focus-visible"
+            className="inline-flex items-center justify-center rounded-full bg-teal px-6 py-3 text-base font-semibold text-night transition hover:bg-teal/90 focus:outline-none focus-visible:focus-ring"
             onClick={() => window.gajoTrack?.('cta_click_primary')}
           >
             {hero.ctaPrimary}
           </a>
           <a
             href={hero.ctaSecondaryHref}
-            className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-base font-semibold text-mist transition hover:border-white/40 focus-visible"
+            className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-base font-semibold text-mist transition hover:border-white/40 focus:outline-none focus-visible:focus-ring"
             onClick={() => window.gajoTrack?.('cta_click_secondary')}
           >
             {hero.ctaSecondary}

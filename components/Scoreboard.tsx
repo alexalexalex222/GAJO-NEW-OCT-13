@@ -57,7 +57,7 @@ export default function Scoreboard({ scoreboard }: ScoreboardProps) {
           </dl>
           <button
             type="button"
-            className="self-start text-sm font-semibold text-blue transition hover:text-blue/80 focus-visible"
+            className="self-start text-sm font-semibold text-blue transition hover:text-blue/80 focus:outline-none focus-visible:focus-ring"
             aria-expanded={expanded}
             onClick={() => {
               setExpanded((value) => !value);

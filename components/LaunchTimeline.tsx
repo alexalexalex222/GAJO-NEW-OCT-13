@@ -20,7 +20,7 @@ export default function LaunchTimeline({ timeline }: LaunchTimelineProps) {
               <h3 className="text-xl font-semibold text-white">{phase.phase}</h3>
               <a
                 href={phase.href}
-                className="text-sm font-semibold text-blue transition hover:text-blue/80 focus-visible"
+                className="text-sm font-semibold text-blue transition hover:text-blue/80 focus:outline-none focus-visible:focus-ring"
                 onClick={() => window.gajoTrack?.('timeline_phase_cta', { phase: phase.phase })}
               >
                 {phase.cta}
