@@ -1,0 +1,466 @@
+{
+  "seo": {
+    "title": "GAJO — Marketing for Martial-Arts Gyms",
+    "description": "Launch a profitable marketing engine for your martial-arts gym in about 72 hours. Websites, ads, nurture, and operator support aligned to Qualified Trials.",
+    "ogImage": "/og-image.svg",
+    "twitterHandle": "@gajoops"
+  },
+  "navigation": {
+    "logo": "GAJO",
+    "ariaLabel": "Main navigation",
+    "links": [
+      {
+        "label": "Problem",
+        "href": "#problem"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "PH-386™",
+        "href": "#scoreboard"
+      },
+      {
+        "label": "Pricing",
+        "href": "#pricing"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": {
+      "label": "Request a Demo",
+      "href": "#lead"
+    },
+    "menuToggleLabel": "Toggle navigation"
+  },
+  "hero": {
+    "title": "Marketing for Martial-Arts Gyms.",
+    "subtitle": "Launch in ≈72 hours — we build the funnel, turn on paid, and ship organic clips.",
+    "trust": [
+      "No contracts",
+      "Own your site & ads",
+      "Operator access"
+    ],
+    "ctaPrimary": "Get the 5-Minute Audit",
+    "ctaSecondary": "See Pricing",
+    "ctaPrimaryHref": "#lead",
+    "ctaSecondaryHref": "#pricing",
+    "badges": [
+      "Qualified Trials",
+      "Ad Campaigns",
+      "PH-386™"
+    ],
+    "checklist": [
+      "High-converting website",
+      "Performance-based pricing",
+      "Dedicated operator"
+    ],
+    "backgroundAlt": "Instructor coaching a martial-arts student inside a dimly lit dojo."
+  },
+  "problem": [
+    {
+      "title": "Agencies burn cash on impressions, not members.",
+      "copy": "We replace vanity metrics with Qualified Trials that track from ad click to signed waiver.",
+      "proof": "41% drop in cost-per-trial after 30 days."
+    },
+    {
+      "title": "Generic funnels ignore martial-arts buying cycles.",
+      "copy": "Our flows mirror intro-class and fundamentals cadence so prospects do not ghost the follow-up.",
+      "proof": "Intro show rates up to 73% across BJJ and Muay Thai gyms."
+    },
+    {
+      "title": "No operator means no follow-through.",
+      "copy": "We plug in an operator who sits inside your CRM and runs the daily playbook with you.",
+      "proof": "Daily operator standups keep response times under 8 minutes."
+    }
+  ],
+  "services": {
+    "title": "The Service Ladder",
+    "intro": "Every layer stacks on the one before it so you can scale what works and cut what does not.",
+    "items": [
+      {
+        "title": "Website & Funnel",
+        "copy": "Conversion-first landers, class schedules, and multi-location routing built in Next.js for speed.",
+        "deliverables": [
+          "Dojo-specific landing pages",
+          "Offer testing framework",
+          "SEO-ready blog stubs"
+        ]
+      },
+      {
+        "title": "Paid Acquisition",
+        "copy": "Meta + Google campaigns tuned for Qualified Trials with daily budget reviews and creative swaps.",
+        "deliverables": [
+          "Meta + Google account builds",
+          "Offer libraries",
+          "Daily pacing alerts"
+        ]
+      },
+      {
+        "title": "Short-Form Engine",
+        "copy": "Clip your classes, we turn them into shorts with hooks, captions, and CTAs mapped to your offer.",
+        "deliverables": [
+          "Batch content workflows",
+          "Brand overlays",
+          "Organic + paid placement plan"
+        ]
+      },
+      {
+        "title": "Nurture + CRM",
+        "copy": "Automations that warm cold leads, track shows, and send operator alerts across SMS + email.",
+        "deliverables": [
+          "Pipeline architecture",
+          "Automated cadences",
+          "Offer-driven copy bank"
+        ]
+      },
+      {
+        "title": "Operator Access",
+        "copy": "You get a revenue operator on signal, Slack, and email — the same person who ran our DojoATL lab.",
+        "deliverables": [
+          "Daily metrics review",
+          "Offer + pricing audits",
+          "Quarterly growth map"
+        ]
+      }
+    ]
+  },
+  "scoreboard": {
+    "title": "PH-386™ Scoreboard",
+    "description": "$386 base + performance tiers aligned to Trials/Shows/Members. Hard cap, fraud rules, full audit trail.",
+    "base": 386,
+    "metric": "Trials",
+    "ratePerUnit": 26,
+    "exampleUnits": 25,
+    "guardrailsTitle": "Guardrails",
+    "notes": [
+      "Hard cap locked in before launch",
+      "Fraud + no-show disqualify from variable tier",
+      "Live audit trail shared weekly"
+    ],
+    "exampleBreakdown": [
+      "$386 base retainer",
+      "25 Qualified Trials × $26 = $650",
+      "Projected invoice: $1,036"
+    ],
+    "detailToggle": "How the math works",
+    "detailCopy": "Every Qualified Trial is tagged in the CRM. Shows and new members unlock lower per-unit rates the longer we work together.",
+    "metricLabel": "Per Qualified {metric}",
+    "targetLabel": "{metric} target",
+    "variableLabel": "Variable",
+    "totalLabel": "Total"
+  },
+  "timeline": {
+    "title": "72-Hour Launch Timeline",
+    "summary": "Launch fast, keep what works, kill what does not.",
+    "phases": [
+      {
+        "phase": "Day 0–1",
+        "cta": "Kickoff Call",
+        "href": "#lead",
+        "bullets": [
+          "Audit current offer, pricing, and assets",
+          "Connect ad accounts + CRM",
+          "Book film session or stock fallback"
+        ]
+      },
+      {
+        "phase": "Day 1–3",
+        "cta": "Approve Launch",
+        "href": "#lead",
+        "bullets": [
+          "Ship website + funnel with tracking",
+          "Load nurture automations + SMS",
+          "Launch initial campaigns with safeguards"
+        ]
+      },
+      {
+        "phase": "Days 4–14",
+        "cta": "See Daily Standup",
+        "href": "#lead",
+        "bullets": [
+          "Run daily operator standup",
+          "Rotate creatives + optimize bids",
+          "Review trial-to-show conversion"
+        ]
+      },
+      {
+        "phase": "Days 15–30",
+        "cta": "Scale What's Working",
+        "href": "#lead",
+        "bullets": [
+          "Expand to secondary offers",
+          "Layer retargeting + referral boosts",
+          "Lock in next growth sprint"
+        ]
+      }
+    ]
+  },
+  "deliverables": {
+    "title": "Deliverables You Keep",
+    "subtitle": "You own every asset — domains, ad accounts, footage, and automations.",
+    "items": [
+      {
+        "title": "Assets",
+        "copy": "Next.js site, funnels, automations, and design system handed over in a shared repo."
+      },
+      {
+        "title": "Campaigns",
+        "copy": "Ad libraries, targeting templates, negative lists, and creative briefs built for your market."
+      },
+      {
+        "title": "Content",
+        "copy": "Short-form edits, thumbnail packs, captions, and posting calendar ready for your team."
+      },
+      {
+        "title": "CRM",
+        "copy": "Pipeline, automation map, tags, and reporting dashboards wired to your preferred platform."
+      }
+    ],
+    "callout": "No black-box retainers. Cancel anytime and keep the machine."
+  },
+  "metrics": {
+    "title": "Scorecard Metrics",
+    "description": "We report on real operators' numbers, not vanity screenshots.",
+    "items": [
+      {
+        "name": "CPL",
+        "target": "<$35 on core offers"
+      },
+      {
+        "name": "Trial→Show %",
+        "target": ">65% within 30 days"
+      },
+      {
+        "name": "Show→Member %",
+        "target": ">45% once onboarding locks"
+      },
+      {
+        "name": "Blended CAC",
+        "target": "≤ first month dues"
+      },
+      {
+        "name": "Time-to-first-lead",
+        "target": "<48 hours"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Pricing + Calculator",
+    "tabs": [
+      {
+        "id": "trials",
+        "label": "Trials",
+        "unit": "Qualified Trial",
+        "rate": 26,
+        "example": "25 Trials → $1,036 invoice",
+        "description": "Best if you are relaunching paid traffic or need a net-new funnel."
+      },
+      {
+        "id": "shows",
+        "label": "Shows",
+        "unit": "Intro Show",
+        "rate": 58,
+        "example": "18 Shows → $1,430 invoice",
+        "description": "Layered retargeting + nurture to keep class bookings high."
+      },
+      {
+        "id": "members",
+        "label": "New Members",
+        "unit": "New Member",
+        "rate": 142,
+        "example": "12 Members → $2,090 invoice",
+        "description": "For mature gyms stacking paid + organic to add locations."
+      }
+    ],
+    "slider": {
+      "label": "Monthly target",
+      "srLabel": "Set monthly goal count",
+      "min": 0,
+      "max": 200,
+      "step": 1
+    },
+    "base": 386,
+    "copyButton": "Copy Example",
+    "copiedLabel": "Copied",
+    "hardCapToggle": "Apply hard cap",
+    "hardCapNote": "Hard caps prevent runaway invoices during testing weeks.",
+    "hardCapLabel": "Monthly hard cap",
+    "hardCapPlaceholder": "Enter cap in USD",
+    "guardrail": "Invoices will never exceed your approved cap.",
+    "aria": {
+      "tabs": "Pricing metric tabs",
+      "tabPanel": "Pricing details",
+      "slider": "Monthly performance target slider",
+      "rate": "Per-unit rate",
+      "base": "Base fee"
+    },
+    "unitInputLabel": "Expected cost per {unit}",
+    "unitInputPlaceholder": "Optional — e.g., 49",
+    "resultLabel": "Projected fee",
+    "baseLabel": "Base retainer",
+    "rateLabel": "Variable",
+    "copyExample": "Copy breakdown to clipboard",
+    "capApplied": "Cap applied",
+    "unitValueLabel": "{unit} value"
+  },
+  "faq": {
+    "title": "FAQ + Objections",
+    "items": [
+      {
+        "q": "Is there a long-term contract?",
+        "a": "No. We operate on a performance retainer. Cancel anytime and you keep the assets, tracking, and creative."
+      },
+      {
+        "q": "What if my market is saturated?",
+        "a": "We built PH-386™ around metro areas with 2–5 direct competitors. Offers rotate quarterly to keep response fresh."
+      },
+      {
+        "q": "Do you work with franchises?",
+        "a": "We focus on independent gyms so operators can move fast. Multi-location groups welcome if decision cycles stay tight."
+      },
+      {
+        "q": "How much content do we have to create?",
+        "a": "Give us 20 minutes of mat time every two weeks. We handle edits, copy, and distribution. Stock footage fills gaps."
+      },
+      {
+        "q": "Can we pause during slow seasons?",
+        "a": "Yes. Ramp to maintenance tier with nurture-only support, then spin back up when you need more trials."
+      }
+    ]
+  },
+  "form": {
+    "title": "Get the 5-Minute Audit",
+    "subtitle": "Two quick steps and the operator team will send you a tailored launch plan.",
+    "steps": [
+      {
+        "id": "contact",
+        "title": "About you",
+        "cta": "Next",
+        "fields": [
+          {
+            "id": "name",
+            "label": "Full name",
+            "placeholder": "Who should we contact?",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "email",
+            "label": "Email",
+            "placeholder": "name@martialgym.com",
+            "type": "email",
+            "required": true
+          },
+          {
+            "id": "phone",
+            "label": "Phone",
+            "placeholder": "Best number for SMS updates",
+            "type": "tel",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "gym",
+        "title": "About the gym",
+        "cta": "Request Audit",
+        "fields": [
+          {
+            "id": "location",
+            "label": "City & ZIP",
+            "placeholder": "e.g., Atlanta 30318",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "discipline",
+            "label": "Primary discipline",
+            "placeholder": "BJJ, Muay Thai, MMA…",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "utm_source",
+            "label": "UTM Source",
+            "placeholder": "",
+            "type": "hidden",
+            "required": false
+          },
+          {
+            "id": "utm_medium",
+            "label": "UTM Medium",
+            "placeholder": "",
+            "type": "hidden",
+            "required": false
+          },
+          {
+            "id": "utm_campaign",
+            "label": "UTM Campaign",
+            "placeholder": "",
+            "type": "hidden",
+            "required": false
+          },
+          {
+            "id": "city_zip",
+            "label": "City ZIP Hidden",
+            "placeholder": "",
+            "type": "hidden",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "honeypot": {
+      "id": "dojo_code",
+      "label": "Leave this field empty",
+      "placeholder": "",
+      "aria": "If you are human, leave this blank"
+    },
+    "successTitle": "Audit requested",
+    "successBody": "Check your email for scheduling options and a short video walkthrough of the 72-hour launch.",
+    "error": "Something went wrong. Try again or email operator@gajoops.com.",
+    "privacy": "By submitting you agree to receive SMS and email follow-ups. Opt out anytime.",
+    "webhookNote": "Submits post to the CRM webhook provided in the environment variables.",
+    "stepIndicator": "Step {current} of {total}",
+    "loadingLabel": "Sending…"
+  },
+  "footer": {
+    "legal": "© ",
+    "legalSuffix": " GAJO. Built with DojoATL operators.",
+    "links": [
+      {
+        "label": "Privacy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Cookies",
+        "href": "/cookies"
+      }
+    ],
+    "address": "Atlanta, GA — remote operators across the US.",
+    "contact": {
+      "email": "operator@gajoops.com",
+      "phone": "(404) 555-0386"
+    }
+  },
+  "consent": {
+    "message": "We use cookies and pixels to measure Qualified Trials and improve the launch playbook.",
+    "accept": "Accept",
+    "deny": "Decline",
+    "manage": "Manage",
+    "ariaLabel": "Cookie consent"
+  },
+  "policies": {
+    "privacyTitle": "Privacy Policy",
+    "privacyBody": "GAJO collects contact details and engagement data to operate the Qualified Trial program. Data is stored in secure CRM systems and can be removed upon request by emailing operator@gajoops.com.",
+    "cookiesTitle": "Cookie & Tracking Policy",
+    "cookiesBody": "We use necessary cookies plus Meta Pixel and Google Tag to measure trials, shows, and members. Declining optional tracking disables performance reporting but the site remains usable."
+  },
+  "a11y": {
+    "skipToContent": "Skip to content"
+  }
+}

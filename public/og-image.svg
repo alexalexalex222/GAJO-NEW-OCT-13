@@ -1,0 +1,16 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0B1115"/>
+  <g filter="url(#blur)">
+    <circle cx="260" cy="180" r="220" fill="#1A9BFF" fill-opacity="0.32"/>
+    <circle cx="940" cy="450" r="260" fill="#00B887" fill-opacity="0.28"/>
+  </g>
+  <rect x="120" y="160" width="960" height="310" rx="40" fill="#0F151A" stroke="#E6F0F51F" stroke-width="2"/>
+  <text x="160" y="260" font-family="Inter, 'Segoe UI', sans-serif" font-size="56" font-weight="700" fill="#E6F0F5">GAJO</text>
+  <text x="160" y="340" font-family="Inter, 'Segoe UI', sans-serif" font-size="42" font-weight="600" fill="#E6F0F5">Marketing for Martial-Arts Gyms</text>
+  <text x="160" y="400" font-family="Inter, 'Segoe UI', sans-serif" font-size="26" fill="#9FB2BF">Launch in ≈72 hours — keep what works, kill what doesn’t.</text>
+  <defs>
+    <filter id="blur" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+  </defs>
+</svg>
