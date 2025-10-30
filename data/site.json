@@ -58,6 +58,7 @@
       "Performance-based pricing",
       "Dedicated operator"
     ],
+    "backgroundImage": "https://images.unsplash.com/photo-1587329310686-23acb318b04e?auto=format&fit=crop&w=1400&q=80",
     "backgroundAlt": "Instructor coaching a martial-arts student inside a dimly lit dojo."
   },
   "problem": [
@@ -132,6 +133,7 @@
     "title": "PH-386™ Scoreboard",
     "description": "$386 base + performance tiers aligned to Trials/Shows/Members. Hard cap, fraud rules, full audit trail.",
     "base": 386,
+    "baseLabel": "Base retainer",
     "metric": "Trials",
     "ratePerUnit": 26,
     "exampleUnits": 25,

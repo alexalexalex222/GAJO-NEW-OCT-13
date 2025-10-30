@@ -7,12 +7,23 @@ type ScoreboardProps = {
   scoreboard: SiteContent['scoreboard'];
 };
 
+const currency = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0,
+});
+
 export default function Scoreboard({ scoreboard }: ScoreboardProps) {
   const [expanded, setExpanded] = useState(false);
 
+  const variableValue = useMemo(
+    () => scoreboard.ratePerUnit * scoreboard.exampleUnits,
+    [scoreboard.exampleUnits, scoreboard.ratePerUnit]
+  );
+
   const exampleTotal = useMemo(
-    () => scoreboard.base + scoreboard.ratePerUnit * scoreboard.exampleUnits,
-    [scoreboard.base, scoreboard.ratePerUnit, scoreboard.exampleUnits]
+    () => scoreboard.base + variableValue,
+    [scoreboard.base, variableValue]
   );
 
   return (
@@ -24,7 +35,7 @@ export default function Scoreboard({ scoreboard }: ScoreboardProps) {
       <div className="grid gap-6 md:grid-cols-2">
         <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-night/40 p-6">
           <div className="text-sm uppercase tracking-[0.2em] text-blue/80">{scoreboard.metric}</div>
-          <div className="text-4xl font-semibold text-white">${scoreboard.ratePerUnit}</div>
+          <div className="text-4xl font-semibold text-white">{currency.format(scoreboard.ratePerUnit)}</div>
           <p className="text-sm text-mistMuted">{scoreboard.metricLabel.replace('{metric}', scoreboard.metric)}</p>
           <dl className="mt-4 grid gap-3 text-sm text-mist">
             <div className="flex items-center justify-between">
@@ -32,12 +43,16 @@ export default function Scoreboard({ scoreboard }: ScoreboardProps) {
               <dd>{scoreboard.exampleUnits}</dd>
             </div>
             <div className="flex items-center justify-between">
+              <dt>{scoreboard.baseLabel}</dt>
+              <dd>{currency.format(scoreboard.base)}</dd>
+            </div>
+            <div className="flex items-center justify-between">
               <dt>{scoreboard.variableLabel}</dt>
-              <dd>${scoreboard.ratePerUnit * scoreboard.exampleUnits}</dd>
+              <dd>{currency.format(variableValue)}</dd>
             </div>
             <div className="flex items-center justify-between border-t border-white/10 pt-3 text-base font-semibold text-white">
               <dt>{scoreboard.totalLabel}</dt>
-              <dd>${exampleTotal}</dd>
+              <dd>{currency.format(exampleTotal)}</dd>
             </div>
           </dl>
           <button

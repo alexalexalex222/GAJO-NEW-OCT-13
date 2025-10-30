@@ -23,6 +23,7 @@ type Hero = {
   ctaSecondaryHref: string;
   badges: string[];
   checklist: string[];
+  backgroundImage: string;
   backgroundAlt: string;
 };
 
@@ -48,6 +49,7 @@ type Scoreboard = {
   title: string;
   description: string;
   base: number;
+  baseLabel: string;
   metric: string;
   ratePerUnit: number;
   exampleUnits: number;

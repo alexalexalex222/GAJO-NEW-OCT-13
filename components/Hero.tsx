@@ -3,8 +3,6 @@
 import Image from 'next/image';
 import type { Hero as HeroContent } from '@/lib/content';
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1587329310686-23acb318b04e?auto=format&fit=crop&w=1400&q=80';
-
 type HeroProps = {
   hero: HeroContent;
 };
@@ -14,7 +12,7 @@ export default function Hero({ hero }: HeroProps) {
     <section id="top" className="relative overflow-hidden rounded-2xl border border-white/5 bg-nightLight/80 p-10 shadow-glass">
       <div className="absolute inset-0">
         <Image
-          src={HERO_IMAGE}
+          src={hero.backgroundImage}
           alt={hero.backgroundAlt}
           fill
           priority
